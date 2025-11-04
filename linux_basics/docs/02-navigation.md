@@ -404,12 +404,4 @@ cd My\ Documents           # Also works
 cd My_Documents            # Better - no spaces needed
 ```
 
-## What's Next?
-
-Now that you can navigate confidently, you're ready to create, copy, and organize files!
-
-**[Next: Working with Files and Directories →](03-file-operations.md)**
-
----
-
 **Key Takeaway:** Navigation is like walking through a building. `pwd` tells you where you are, `ls` shows what's around you, and `cd` moves you to a new location. Master these three commands and you'll never be lost!
