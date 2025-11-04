@@ -641,12 +641,4 @@ find . -name "*.tmp"         # Review list
 find . -name "*.tmp" -delete # Then delete
 ```
 
-## What's Next?
-
-Now that you can search within files and locate files themselves, you're ready to learn how to combine commands for powerful workflows!
-
-**[Next: Pipes and Redirects →](06-pipes-redirects.md)**
-
----
-
 **Key Takeaway:** `grep` searches inside files, `find` searches for files. Master these two commands and you'll be able to locate any data quickly. They're among the most powerful tools in your Linux toolkit!
