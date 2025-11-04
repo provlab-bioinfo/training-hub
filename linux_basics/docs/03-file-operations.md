@@ -506,12 +506,4 @@ mv new_data.txt important_data.txt  # Overwrites important_data.txt!
 mv -i new_data.txt important_data.txt  # Asks before overwriting
 ```
 
-## What's Next?
-
-Now that you can create and organize files, you're ready to learn how to view and examine their contents!
-
-**[Next: Viewing File Contents →](04-viewing-files.md)**
-
----
-
 **Key Takeaway:** File operations are powerful but permanent. Always use `-i` for important operations, check with `ls` before bulk actions, and remember: there's no undo button in Linux!
