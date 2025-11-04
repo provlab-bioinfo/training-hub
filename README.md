@@ -1,8 +1,8 @@
 # 🧬 ProvLab Bioinformatics Training Hub
 
 Welcome to the **ProvLab Bioinformatics Training Hub**!  
-This repository is the central resource for **hands-on bioinformatics training** at the **ProvLab (Calgary)**.  
-It provides modular lessons, exercises, and examples to help new users gain practical computational biology skills.
+This repository is the central resource for **hands-on bioinformatics training** at the **ProvLab**.  
+It provides modular lessons, exercises, and examples to help our teammates gain practical computational biology skills.
 
 ## 📚 Training Modules
 
