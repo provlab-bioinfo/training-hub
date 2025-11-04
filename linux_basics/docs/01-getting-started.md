@@ -8,20 +8,12 @@ The command line (also called terminal or shell) is a text-based interface where
 
 Think of it as having a conversation with the computer using a specific language. You type a command, press Enter, and the computer responds.
 
-## Installing and Setting Up PuTTY
+## Launch PuTTY
 
 Most of our users work from Windows computers and use **PuTTY** to connect to the Linux server.
 
-### First Time Installation
-
-1. **Download PuTTY**
-   - Visit: https://www.putty.org/
-   - Download the installer (putty-installer.msi)
-   - Run the installer and follow the prompts
-
-2. **Launch PuTTY**
-   - Find PuTTY in your Start menu
-   - You'll see the PuTTY Configuration window
+- Find PuTTY in your Start menu
+- You'll see the PuTTY Configuration window
 
 ### Connecting to the Server
 
