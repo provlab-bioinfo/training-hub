@@ -1,6 +1,6 @@
 # Getting Started
 
-Welcome to your first steps in the Linux command line! This guide will help you connect to our Red Hat server and run your first commands.
+Welcome to your first steps in the Linux command line! This guide will help you connect to our Linux server and run your first commands.
 
 ## What is the Command Line?
 
