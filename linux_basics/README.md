@@ -62,26 +62,12 @@ New to Linux? Start here:
 4. **Practice regularly** - use it or lose it!
 5. **Don't memorize everything** - even experts look things up
 
-## 🆘 Getting Help
-
-- **On the server:** Contact your system administrator
-- **Bioinformatics questions:** [contact information]
-- **Found an error?** Open an issue or submit a pull request
-
 ## 📝 Prerequisites
 
-- Access credentials to our Red Hat Linux server
-- PuTTY installed on your Windows computer (download from [putty.org](https://www.putty.org/))
+- Access credentials to our Linux server
+- PuTTY installed on your Windows computer
 - Basic computer literacy
 - Enthusiasm to learn!
-
-## 🤝 Contributing
-
-Found a typo? Have a suggestion? Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-## 📄 License
-
-This tutorial is released under [MIT License](LICENSE) - feel free to use and adapt for your institution.
 
 ---
 
