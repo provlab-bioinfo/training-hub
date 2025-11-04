@@ -329,14 +329,6 @@ Your session will end, but your files and data remain safely on the server.
 - Go to PuTTY Configuration → Window → Translation
 - Set "Remote character set" to UTF-8
 
-## What's Next?
-
-Now that you can connect and run basic commands, you're ready to learn about:
-
-**[Next: Navigating the File System →](02-navigation.md)**
-
-You'll learn how to move around directories, understand the Linux file structure, and find your way around like a pro!
-
 ## Quick Reference
 
 | Command | What It Does |
