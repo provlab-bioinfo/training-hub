@@ -595,12 +595,4 @@ cat file                   # Then view
 zless file.gz              # View without decompressing
 ```
 
-## What's Next?
-
-Now that you can view files effectively, you're ready to learn how to search for specific content!
-
-**[Next: Searching and Finding →](05-searching.md)**
-
----
-
 **Key Takeaway:** Different viewing commands for different needs. Use `head` for quick checks, `less` for browsing, `tail -f` for monitoring, and `wc` for counting. Master these and you'll efficiently inspect any bioinformatics data!
