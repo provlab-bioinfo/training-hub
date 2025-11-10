@@ -2,6 +2,11 @@
 
 A comprehensive guide for biologists learning to use the command line on Red Hat Linux servers. This tutorial assumes no prior command line experience and focuses on practical skills needed for bioinformatics work.
 
+> **Note:** This Linux tutorial was developed with assistance from *Claudi AI*.  
+> All instructions and code examples were reviewed and tested by the author.
+
+
+
 ## 🚀 Quick Start
 
 New to Linux? Start here:
