@@ -1,6 +1,9 @@
 A comprehensive guide for biologists learning to use the command line on Linux servers. This tutorial assumes no prior command line experience and focuses on practical skills needed for bioinformatics work.
 
-> **Note:** This Linux tutorial was developed with assistance from *Claudi AI*.  All instructions and code examples were reviewed and tested by the author.
+
+> **📝 Note:**  
+> This Linux tutorial was generated with assistance from **AI tools** (including Claudi AI).  
+> All instructions and code examples were **reviewed and verified** by the author.
 
 
 
