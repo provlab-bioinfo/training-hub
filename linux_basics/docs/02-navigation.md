@@ -19,7 +19,6 @@ The Linux file system is organized like an upside-down tree:
 ├── tmp/                   (temporary files)
 └── var/                   (variable data, logs)
 ```
-
 ### Key Concepts
 
 **Root Directory (`/`)**: The very top of the file system. Everything lives under root.
@@ -30,7 +29,9 @@ The Linux file system is organized like an upside-down tree:
 
 **Parent Directory (`..`)**: One level up from where you are.
 
-## The `ls` Command - Looking Around
+***
+
+<details><summary>The `ls` Command - Looking Around </summary>
 
 Before moving somewhere, it helps to see what's available.
 
@@ -105,8 +106,9 @@ ls /home/jsmith/Documents
 ls ~/projects
 ls ..
 ```
+</details>
 
-## The `cd` Command - Moving Around
+<details><summary>The `cd` Command - Moving Around</summary>
 
 `cd` stands for "change directory" - this is how you move through the file system.
 
@@ -176,8 +178,9 @@ Works from anywhere!
 cd projects/rna_seq        # Only works if 'projects' is in current directory
 cd ../other_project        # Go up one level, then into other_project
 ```
+</details>
 
-## Using Tab Completion
+<details><summary>Using Tab Completion</summary>
 
 Here's a secret that will save you TONS of time: **Tab completion**!
 
@@ -198,8 +201,9 @@ cd pro[Tab][Tab]
 ```
 
 This prevents typos and speeds up your work dramatically!
+</details>
 
-## The `tree` Command (If Available)
+<details><summary>The `tree` Command (If Available)</summary>
 
 If installed on your server, `tree` shows directory structure visually:
 
@@ -227,8 +231,10 @@ Limit depth to avoid overwhelming output:
 tree -L 2                  # Show only 2 levels deep
 tree -d                    # Show only directories
 ```
+</details>
 
-## Finding Your Way
+<details>
+<summary>Finding Your Way</summary>
 
 ### When You're Lost
 
@@ -249,8 +255,10 @@ cd projects               # Enter projects
 ls                        # See what projects exist
 cd current_project        # Enter the one you're working on
 ```
+</details>
 
-## Practice Exercises
+<details>
+<summary>Practice Exercises</summary>summary>
 
 ### Exercise 1: Basic Navigation
 
@@ -302,8 +310,10 @@ ls -lh                     # Human-readable sizes
 ls -lth                    # Sorted by time
 ls -a                      # Show hidden files
 ```
+</details>
 
-## Common Patterns in Bioinformatics
+<details>
+<summary>Common Patterns in Bioinformatics</summary>
 
 Most bioinformatics projects follow similar structures:
 
@@ -327,8 +337,10 @@ cd raw_data                # Look at input
 cd ../results              # Check output
 cd ../scripts              # Edit scripts
 ```
+</details>
 
-## Tips and Tricks
+<details>
+<summary>Tips and Tricks</summary>
 
 ### 1. Use `cd -` to Toggle
 
@@ -366,8 +378,10 @@ Not:
 ```bash
 cd ../../../data          # Which data?
 ```
+</details>
 
-## Quick Reference
+<details>
+<summary>Quick Reference</summary>
 
 | Command | Description | Example |
 |---------|-------------|---------|
@@ -403,5 +417,8 @@ cd "My Documents"          # Works
 cd My\ Documents           # Also works
 cd My_Documents            # Better - no spaces needed
 ```
+</details>
+
+***
 
 **Key Takeaway:** Navigation is like walking through a building. `pwd` tells you where you are, `ls` shows what's around you, and `cd` moves you to a new location. Master these three commands and you'll never be lost!
