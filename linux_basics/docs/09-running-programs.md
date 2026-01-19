@@ -4,7 +4,8 @@ This tutorial covers how to execute programs, scripts, and bioinformatics tools 
 
 ## Running Commands and Programs
 
-### Basic Execution
+<details>
+<summary>Basic Execution</summary>
 
 **Run a command:**
 ```bash
@@ -22,8 +23,10 @@ ls
 fastqc sample.fastq
 bwa mem reference.fa reads.fastq
 ```
+</details>
 
-### Running Scripts
+<details>
+<summary>Running Scripts</summary>
 
 Scripts are files containing commands. Common types in bioinformatics:
 - Bash scripts (`.sh`)
@@ -52,8 +55,10 @@ source script.sh
 # Or shorthand:
 . script.sh
 ```
+</details>
 
-### Making Scripts Executable
+<details>
+<summary>Making Scripts Executable</summary>
 
 Before running with `./`, make script executable:
 
@@ -73,8 +78,10 @@ EOF
 chmod +x hello.sh
 ./hello.sh
 ```
+</details>
 
-### The Shebang Line
+<details>
+<summary>The Shebang Line</summary>
 
 The first line of a script specifies the interpreter:
 
@@ -94,10 +101,12 @@ for file in *.fastq; do
     echo "Processing $file"
 done
 ```
+</details>
 
 ## Foreground vs Background Execution
 
-### Foreground (Default)
+<details>
+<summary>Foreground (Default)</summary>
 
 When you run a command normally, it runs in the foreground:
 - Terminal is blocked until command finishes
@@ -107,8 +116,10 @@ When you run a command normally, it runs in the foreground:
 ```bash
 long_analysis.sh     # Terminal blocked until done
 ```
+</details>
 
-### Background Execution with `&`
+<details>
+<summary>Background Execution with `&`</summary>
 
 Add `&` at the end to run in background:
 - Terminal remains usable
@@ -131,8 +142,10 @@ echo "Alignment running in background"
 ```bash
 long_analysis.sh > output.log 2>&1 &
 ```
+</details>
 
-### Job Control Commands
+<details>
+<summary>Job Control Commands</summary>
 
 **List background jobs:**
 ```bash
@@ -174,10 +187,12 @@ bg
 # Continue working while it runs
 jobs
 ```
+</details>
 
 ## The `nohup` Command - Persistent Jobs
 
-`nohup` (no hang up) keeps programs running even after you log out.
+<details>
+<summary>`nohup` (no hang up) keeps programs running even after you log out.</summary>
 
 **Basic usage:**
 ```bash
@@ -206,10 +221,12 @@ nohup long_analysis.sh > analysis.log 2>&1 &
 nohup bash -c 'command1 && command2 && command3' > job.log 2>&1 &
 echo $! > job.pid  # Save process ID for later
 ```
+</details>
 
 ## Monitoring Running Processes
 
-### The `ps` Command
+<details>
+<summary>The `ps` Command</summary>
 
 `ps` shows running processes.
 
@@ -241,8 +258,10 @@ ps aux --sort=-%cpu # Sort by CPU usage
 ```bash
 ps aux | grep $USER | grep -E 'bwa|fastqc|python'
 ```
+</details>
 
-### The `top` Command
+<details>
+<summary>The `top` Command</summary>
 
 `top` shows real-time process information.
 
@@ -263,8 +282,10 @@ htop
 ```
 
 More user-friendly with color coding and mouse support.
+</details>
 
-### The `pgrep` Command
+<details>
+<summary>The `pgrep` Command</summary>
 
 Find process IDs by name:
 
@@ -280,10 +301,12 @@ pgrep -l bwa        # Show name and PID
 pgrep -l python
 kill $(pgrep python)
 ```
+</details>
 
 ## Killing Processes
 
-### The `kill` Command
+<details>
+<summary>The `kill` Command</summary>
 
 **Basic syntax:**
 ```bash
@@ -312,8 +335,10 @@ kill -9 12345       # Force kill (SIGKILL)
 pkill process_name
 pkill -9 process_name    # Force kill
 ```
+</details>
 
-### Common Kill Signals
+<details>
+<summary>Common Kill Signals</summary>
 
 ```bash
 kill -TERM PID      # Default: graceful shutdown (15)
@@ -334,8 +359,10 @@ sleep 5
 # If still running, force kill
 kill -9 12345
 ```
+</details>
 
-### Killing Multiple Processes
+<details>
+<summary>Killing Multiple Processes</summary>
 
 **Kill all processes matching pattern:**
 ```bash
@@ -347,10 +374,12 @@ killall process_name
 ```bash
 pkill -u $USER python
 ```
+</details>
 
 ## Checking Process Status
 
-### Check if Process is Running
+<details>
+<summary>Check if Process is Running</summary>
 
 ```bash
 ps -p PID           # Check specific PID
@@ -366,8 +395,10 @@ else
     echo "Process has finished"
 fi
 ```
+</details>
 
-### Monitor Process Resource Usage
+<details>
+<summary>Monitor Process Resource Usage</summary>
 
 ```bash
 # CPU and memory for specific process
@@ -376,10 +407,12 @@ top -p PID
 # Detailed process info
 ps -p PID -o pid,ppid,cmd,%mem,%cpu
 ```
+</details>
 
 ## Running Bioinformatics Tools
 
-### Typical Workflow
+<details>
+<summary>Typical Workflow</summary>
 
 ```bash
 # 1. Check if tool is available
@@ -402,8 +435,10 @@ tail -f fastqc.log
 cat fastqc.pid
 ps -p $(cat fastqc.pid)
 ```
+</details>
 
-### Running Multiple Samples
+<details>
+<summary>Running Multiple Samples</summary>
 
 **Sequential processing:**
 ```bash
@@ -428,6 +463,7 @@ for sample in sample1 sample2 sample3; do
     nohup process_sample.sh $sample > ${sample}.log 2>&1 &
 done
 ```
+</details>
 
 ## Screen and Tmux - Terminal Multiplexers
 
@@ -436,7 +472,8 @@ For long-running jobs, consider using screen or tmux. These allow you to:
 - Keep jobs running if connection drops
 - Organize multiple tasks in windows
 
-### Basic Screen Usage
+<details>
+<summary>Basic Screen Usage</summary>
 
 **Start screen session:**
 ```bash
@@ -467,8 +504,10 @@ screen -r analysis_session
 ```bash
 screen -X -S analysis_session quit
 ```
+</details>
 
-### Basic Tmux Usage
+<details>
+<summary>Basic Tmux Usage</summary>
 
 **Start tmux session:**
 ```bash
@@ -494,6 +533,7 @@ tmux attach -t analysis
 ```bash
 tmux kill-session -t analysis
 ```
+</details>
 
 ## Best Practices for Running Jobs
 
@@ -565,8 +605,10 @@ df -h
 # Check CPU usage
 top -b -n 1 | head -20
 ```
+***
 
-## Example Workflows
+<details>
+<summary>Example Workflows</summary>
 
 ### Workflow 1: Quality Control Pipeline
 
@@ -656,8 +698,10 @@ done
 echo "Processing Summary:"
 cat $STATUS_FILE
 ```
+</details>
 
-## Troubleshooting
+<details>
+<summary>Troubleshooting</summary>
 
 ### Problem: Command Not Found
 
@@ -725,7 +769,9 @@ long_job.sh
 nohup long_job.sh &
 # Or run in screen/tmux session
 ```
+</details>
 
+*** 
 ## Quick Reference
 
 ### Running Programs
