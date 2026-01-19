@@ -121,7 +121,7 @@ EOF
 
 ## Part 1: grep - Searching Inside Files
 
-### Exercise 4.1: Basic grep
+<details><summary>Exercise 4.1: Basic grep</summary>
 
 **Tasks:**
 1. Search for "BRCA1" in annotations.txt
@@ -133,8 +133,9 @@ EOF
 ```bash
 grep "pattern" filename
 ```
+</details>
 
-## Exercise 4.2: Case-Insensitive Search
+<details><summary>Exercise 4.2: Case-Insensitive Search</summary>
 
 **Tasks:**
 1. Search for "brca1" (lowercase) in annotations.txt - what happens?
@@ -148,8 +149,8 @@ grep -i "pattern" filename
 ```
 
 **Question:** When would case-insensitive search be useful?
-
-## Exercise 4.3: Counting Matches
+</details>
+<details><summary>Exercise 4.3: Counting Matches</summary>
 
 **Tasks:**
 1. Count how many genes are on chr1
@@ -161,8 +162,8 @@ grep -i "pattern" filename
 ```bash
 grep -c "pattern" filename
 ```
-
-## Exercise 4.4: Showing Line Numbers
+</details>
+<details><summary>Exercise 4.4: Showing Line Numbers</summary>
 
 **Tasks:**
 1. Find "ERROR" in analysis.log with line numbers
@@ -175,8 +176,8 @@ grep -n "pattern" filename
 ```
 
 **Why useful?** You can jump directly to those lines with an editor.
-
-## Exercise 4.5: Inverting Matches
+</details>
+<details><summary>Exercise 4.5: Inverting Matches</summary>
 
 **Tasks:**
 1. Show all lines that DON'T contain "chr1" in annotations.txt
@@ -188,8 +189,9 @@ grep -n "pattern" filename
 ```bash
 grep -v "pattern" filename
 ```
+</details>
 
-## Exercise 4.6: Searching Multiple Files
+<details><summary>Exercise 4.6: Searching Multiple Files</summary>
 
 **Tasks:**
 1. Search for "sample" in all .txt files
@@ -203,8 +205,8 @@ grep "pattern" *.txt
 grep "pattern" file1 file2
 grep -l "pattern" *          # Show only filenames
 ```
-
-## Exercise 4.7: Context Around Matches
+</details>
+<details><summary>Exercise 4.7: Context Around Matches</summary>
 
 **Tasks:**
 1. Find "ERROR" in analysis.log with 2 lines before and after
@@ -217,8 +219,8 @@ grep -A 2 "pattern" filename    # 2 lines After
 grep -B 2 "pattern" filename    # 2 lines Before
 grep -C 2 "pattern" filename    # 2 lines Context (before and after)
 ```
-
-## Exercise 4.8: Whole Word Matching
+</details>
+<details><summary>Exercise 4.8: Whole Word Matching</summary>
 
 **Tasks:**
 1. Search for "MYC" in annotations.txt
@@ -231,8 +233,8 @@ grep -C 2 "pattern" filename    # 2 lines Context (before and after)
 grep "MYC" annotations.txt
 grep -w "MYC" annotations.txt    # Whole word only
 ```
-
-## Exercise 4.9: FASTA File Searching
+</details>
+<details><summary>Exercise 4.9: FASTA File Searching</summary>
 
 **Tasks:**
 1. Count how many sequences are in sequences.fasta (count headers)
@@ -248,8 +250,8 @@ grep ">" sequences.fasta
 grep "oncogene" sequences.fasta
 grep -A 1 "gene3" sequences.fasta
 ```
-
-## Exercise 4.10: Log File Analysis
+</details>
+<details><summary>Exercise 4.10: Log File Analysis</summary>
 
 **Tasks:**
 1. Find all ERROR messages in analysis.log
@@ -266,8 +268,8 @@ grep "WARNING" analysis.log
 grep "sample005" analysis.log
 grep "INFO" analysis.log
 ```
-
-## Exercise 4.11: Variant Analysis
+</details>
+<details><summary>Exercise 4.11: Variant Analysis</summary>
 
 **Tasks:**
 1. Find all SNPs in variants.txt
@@ -286,10 +288,11 @@ grep "LOW_QUAL" variants.txt
 grep "chrX" variants.txt
 grep "chr1" variants.txt | wc -l
 ```
+</details>
 
 ## Part 2: find - Locating Files
 
-### Exercise 4.12: Basic find
+<details><summary>Exercise 4.12: Basic find</summary>
 
 **Tasks:**
 1. Find all files in current directory
@@ -303,8 +306,8 @@ find data/
 find . -type f           # Files only
 find . -type d           # Directories only
 ```
-
-## Exercise 4.13: Finding by Name
+</details>
+<details><summary>Exercise 4.13: Finding by Name</summary>
 
 **Tasks:**
 1. Find all .fastq files
@@ -321,8 +324,8 @@ find . -name "*sample*"
 find . -name "sample001*"
 find . -name "align.sh"
 ```
-
-## Exercise 4.14: Case-Insensitive File Search
+</details>
+<details><summary>Exercise 4.14: Case-Insensitive File Search</summary>
 
 **Tasks:**
 1. Find files with "SAMPLE" or "sample" in name
@@ -333,8 +336,8 @@ find . -name "align.sh"
 find . -iname "*sample*"
 find . -iname "*.sh"
 ```
-
-## Exercise 4.15: Finding by Type
+</details>
+<details><summary>Exercise 4.15: Finding by Type</summary>
 
 **Tasks:**
 1. Find only directories in data/
@@ -349,8 +352,8 @@ find . -type f
 find . -type d | wc -l
 find . -type f | wc -l
 ```
-
-## Exercise 4.16: Finding by Size
+</details>
+<details><summary>Exercise 4.16: Finding by Size</summary>
 
 **Tasks:**
 1. Find files larger than 100 bytes
@@ -364,8 +367,8 @@ find . -type f -size +100c      # +100 bytes
 find . -type f -size 0          # Empty files
 find . -type f -exec ls -lh {} \;
 ```
-
-## Exercise 4.17: Finding Recently Modified Files
+</details>
+<details><summary>Exercise 4.17: Finding Recently Modified Files</summary>
 
 **Tasks:**
 1. Find files modified in the last 5 minutes
@@ -380,8 +383,8 @@ find . -mtime +7                # More than 7 days ago
 ```
 
 **Tip:** Touch a file to update its timestamp: `touch filename`
-
-## Exercise 4.18: Finding and Executing Commands
+</details>
+<details><summary>Exercise 4.18: Finding and Executing Commands</summary>
 
 **Tasks:**
 1. Find all .sh scripts and make them executable
@@ -397,8 +400,8 @@ find . -name "*.fastq" -exec ls -lh {} \;
 mkdir backup
 find data/results -name "*.txt" -exec cp {} backup/ \;
 ```
-
-## Exercise 4.19: Complex Find Queries
+</details>
+<details><summary>Exercise 4.19: Complex Find Queries</summary>
 
 **Tasks:**
 1. Find .fastq files in raw/ directory only
@@ -413,8 +416,8 @@ find . -type f ! -name "*.fastq"
 find . -name "*.txt" -o -name "*.log"
 find . -name "*.sh" -executable
 ```
-
-## Exercise 4.20: Combining grep and find
+</details>
+<details><summary>Exercise 4.20: Combining grep and find</summary>
 
 **Tasks:**
 1. Find all .txt files containing "ERROR"
@@ -429,8 +432,8 @@ find . -name "*.sh" -exec grep -l "echo" {} \;
 find data/ -type f -exec grep -l "sample001" {} \;
 grep "BRCA1" *.txt *.fasta
 ```
-
-## Exercise 4.21: Real-World Scenario - Data Audit
+</details>
+<details><summary>Exercise 4.21: Real-World Scenario - Data Audit</summary>
 
 **Scenario:** You need to audit your data directory.
 
@@ -443,8 +446,8 @@ grep "BRCA1" *.txt *.fasta
 6. Create a report listing all files with their sizes
 
 **Build your audit commands!**
-
-## Exercise 4.22: Finding Missing Samples
+</details>
+<details><summary>Exercise 4.22: Finding Missing Samples</summary>
 
 **Scenario:** You expect paired-end FASTQ files (R1 and R2) for each sample.
 
@@ -454,8 +457,8 @@ grep "BRCA1" *.txt *.fasta
 3. Which samples are missing their pair?
 
 **Hint:** List R1 files, then check for R2 manually or with a script.
-
-## Exercise 4.23: Cleaning Up
+</details>
+<details><summary>Exercise 4.23: Cleaning Up</summary>
 
 **Tasks:**
 1. Find all .tmp files (if any exist)
@@ -473,8 +476,8 @@ find . -name "*.tmp" -delete
 ```
 
 **⚠️ Warning:** Always verify find results before using -delete!
-
-## Challenge Exercise 4.24: Search Detective
+</details>
+<details><summary>Challenge Exercise 4.24: Search Detective</summary>
 
 **Tasks:** Answer these questions using grep and find:
 
@@ -486,8 +489,8 @@ find . -name "*.tmp" -delete
 6. How many kinase genes are there?
 7. Which files contain references to sample002?
 8. How many script files exist and what languages?
-
-## Challenge Exercise 4.25: Create Search Reports
+</details>
+<details><summary>Challenge Exercise 4.25: Create Search Reports</summary>
 
 **Task:** Create comprehensive reports using grep and find.
 
@@ -510,8 +513,8 @@ echo "Tumor samples: $(grep -c tumor sample_list.txt)" >> summary.txt
 echo "Errors found: $(grep -c ERROR analysis.log)" >> summary.txt
 # Continue...
 ```
-
-## Exercise 4.26: Pattern Matching Practice
+</details>
+<details><summary>Exercise 4.26: Pattern Matching Practice</summary>
 
 **Tasks:** Find these patterns:
 
@@ -527,8 +530,8 @@ grep "PASS$" variants.txt            # $ = end of line
 grep "gene[0-9]" sequences.fasta    # [0-9] = any digit
 grep "^$" filename                   # Empty lines
 ```
-
-## Exercise 4.27: Search Optimization
+</details>
+<details><summary>Exercise 4.27: Search Optimization</summary>
 
 **Compare these approaches:**
 
@@ -546,8 +549,8 @@ grep "pattern" file.txt
 1. Which is more efficient?
 2. When might you use approach 1?
 3. What's the difference in output?
-
-## Exercise 4.28: Troubleshooting Searches
+</details>
+<details><summary>Exercise 4.28: Troubleshooting Searches</summary>
 
 **Fix these problematic searches:**
 
@@ -567,6 +570,7 @@ grep -r "pattern" .                  # Searches binary files too
 # Better:
 grep -r "pattern" --include="*.txt" .
 ```
+</details>
 
 ## Common Mistakes Quiz
 
@@ -589,15 +593,14 @@ grep -r "pattern" --include="*.txt" .
 7. Why is grep -c useful?
 
 ## Best Practices Learned
-
-✓ **Use quotes** around search patterns
-✓ **Use -i for case-insensitive** when appropriate
-✓ **Count with grep -c** instead of piping to wc
-✓ **Test find before -delete** to avoid accidents
-✓ **Use grep -l** to find files with matches
-✓ **Combine grep and find** for powerful searches
-✓ **Use -w for whole words** to avoid partial matches
-✓ **Check file locations** before recursive searches
+1. **Use quotes** around search patterns
+2. **Use -i for case-insensitive** when appropriate
+3. **Count with grep -c** instead of piping to wc
+4. **Test find before -delete** to avoid accidents
+5. **Use grep -l** to find files with matches
+6. **Combine grep and find** for powerful searches
+7. **Use -w for whole words** to avoid partial matches
+8. **Check file locations** before recursive searches
 
 ## Quick Reference
 
