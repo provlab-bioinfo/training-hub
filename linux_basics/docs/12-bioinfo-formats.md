@@ -1,8 +1,10 @@
 # Bioinformatics File Formats
 
 Bioinformatics uses specific file formats for different types of data. Understanding these formats is essential for working with sequence data, alignments, variants, and annotations. This tutorial covers the most common formats you'll encounter.
+***
 
-## FASTA Format - Sequences
+<details>
+<summary>FASTA Format - Sequences</summary>
 
 FASTA is the most basic and widely used format for nucleotide or protein sequences.
 
@@ -85,8 +87,10 @@ awk '/^>/ {if (NR>1) printf("\n"); printf("%s\n",$0); next} {printf("%s",$0)} EN
 - **Keep descriptions informative** but concise
 - **Use standard nucleotide codes** (A, T, C, G, N)
 - **Wrap sequences** at 60-80 characters (optional)
+</details>
 
-## FASTQ Format - Sequences with Quality
+<details>
+<summary>FASTQ Format - Sequences with Quality</summary>
 
 FASTQ stores sequences with quality scores, primarily used for raw sequencing reads.
 
@@ -217,8 +221,10 @@ sample_name_R2.fastq.gz    # Reverse reads
 sample_name_1.fastq.gz
 sample_name_2.fastq.gz
 ```
+</details>
 
-## SAM/BAM Format - Alignments
+<details>
+<summary>SAM/BAM Format - Alignments</summary>
 
 SAM (Sequence Alignment/Map) stores aligned sequences. BAM is the compressed binary version.
 
@@ -346,8 +352,10 @@ samtools view alignment.bam chr1:1000000-2000000
 - **Use BAM not SAM** for storage (much smaller)
 - **Keep sorted BAM and index together**
 - **Use proper file naming** (sample.sorted.bam)
+</details>
 
-## VCF Format - Variants
+<details>
+<summary>VCF Format - Variants</summary>
 
 VCF (Variant Call Format) stores genetic variants (SNPs, indels, etc.).
 
@@ -463,8 +471,10 @@ bcftools view -r chr1:1000000-2000000 variants.vcf.gz
 # Convert to different format
 bcftools query -f '%CHROM\t%POS\t%REF\t%ALT\n' variants.vcf.gz
 ```
+</details>
 
-## GFF/GTF Format - Gene Annotations
+<details>
+<summary>GFF/GTF Format - Gene Annotations</summary>
 
 GFF (General Feature Format) and GTF (Gene Transfer Format) store genomic features and annotations.
 
@@ -538,8 +548,10 @@ awk '$1=="chr1" && $3=="gene" && $4<=1500000 && $5>=1500000' annotations.gtf
 ```bash
 awk '/gene_name "BRCA1"/' annotations.gtf
 ```
+</details>
 
-## BED Format - Genomic Regions
+<details>
+<summary>BED Format - Genomic Regions</summary>
 
 BED format stores genomic coordinates (regions, features, etc.).
 
@@ -590,8 +602,10 @@ sort -k1,1 -k2,2n regions.bed
 ```bash
 bedtools merge -i sorted.bed
 ```
+</details>
 
-## File Format Summary Table
+<details>
+<summary>File Format Summary Table</summary>
 
 | Format | Type | Typical Use | Compressed? |
 |--------|------|-------------|-------------|
@@ -603,8 +617,10 @@ bedtools merge -i sorted.bed
 | BCF | Binary | Variants (compressed VCF) | Yes (built-in) |
 | GTF/GFF | Text | Gene annotations | Sometimes (.gz) |
 | BED | Text | Genomic coordinates | Sometimes (.gz) |
+</details>
 
-## Format Conversion Tips
+<details>
+<summary>Format Conversion Tips</summary>
 
 **FASTQ to FASTA:**
 ```bash
@@ -630,8 +646,10 @@ bcftools query -f '%CHROM\t%POS\t%REF\t%ALT\n' variants.vcf > variants.txt
 ```bash
 awk '$3=="exon" {print $1, $4-1, $5}' OFS='\t' annotations.gtf > exons.bed
 ```
+</details>
 
-## Best Practices
+<details>
+<summary>Best Practices</summary>
 
 ### General
 
@@ -666,6 +684,7 @@ results_final_FINAL_v2.bam
 - **VCF**: Compress and index with tabix
 - **FASTA**: Reference genomes can be compressed
 - **GTF/GFF**: Can compress if large
+</details>
 
 ## Quick Reference
 
