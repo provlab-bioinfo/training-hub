@@ -17,7 +17,10 @@ reads.fastq.gz        2 GB    (80% space saved!)
 
 This saves disk space, backup time, and network transfer time.
 
-## The `gzip` Format
+***
+
+<details>
+<summary>The `gzip` Format</summary>
 
 `gzip` is the most common compression format in bioinformatics. Files typically have `.gz` extension.
 
@@ -104,8 +107,10 @@ gunzip -k reference.fasta.gz
 # Test file integrity
 gunzip -t important_data.txt.gz
 ```
+</details>
 
-## Viewing Compressed Files WITHOUT Decompressing
+<details>
+<summary>Viewing Compressed Files WITHOUT Decompressing</summary>
 
 This is incredibly useful! You can work with compressed files directly without wasting time and space decompressing them.
 
@@ -243,8 +248,10 @@ zcat reads.fastq.gz | awk 'NR%4==0' | head -1000
 # Check read lengths
 zcat reads.fastq.gz | awk 'NR%4==2 {print length}' | sort | uniq -c
 ```
+</details>
 
-## The `tar` Command - Archive Multiple Files
+<details>
+<summary>The `tar` Command - Archive Multiple Files</summary>
 
 `tar` (tape archive) bundles multiple files into a single archive. Often combined with compression.
 
@@ -333,8 +340,10 @@ tar -czf backup.tar.gz --exclude="*.bam" project/
 tar -czf archive.tar.gz data/
 tar -tzf archive.tar.gz    # Verify contents
 ```
+</details>
 
-## Other Compression Tools
+<details>
+<summary>Other Compression Tools</summary>
 
 ### `bzip2` - Better Compression, Slower
 
@@ -369,7 +378,10 @@ xzcat file.txt.xz           # View without decompressing
 | bzip2 (.bz2) | Medium | Better | Long-term storage |
 | xz (.xz) | Slow | Best | Archival, maximum compression |
 
-## Practical Workflows
+</details>
+
+<details>
+<summary>Practical Workflows</summary>
 
 ### Workflow 1: Archive Old Analysis
 
@@ -455,8 +467,10 @@ done
 # Find corrupt files
 find . -name "*.gz" -exec gunzip -t {} \; -print 2>&1 | grep -B1 "unexpected end"
 ```
+</details>
 
-## Space-Saving Strategies
+<details>
+<summary>Space-Saving Strategies</summary>
 
 ### Check Compression Savings
 
@@ -496,8 +510,10 @@ find . -type f -exec du -h {} + | sort -rh | head -20
 # Find large compressed files
 find . -name "*.gz" -size +1G -exec ls -lh {} \;
 ```
+</details>
 
-## Compression Best Practices
+<details>
+<summary>Compression Best Practices</summary>
 
 1. **Always compress FASTQ files** - They're huge and compress well
    ```bash
@@ -532,7 +548,10 @@ find . -name "*.gz" -size +1G -exec ls -lh {} \;
    - **Long-term storage:** bzip2 or xz (better compression)
    - **Quick testing:** lower compression level (gzip -1)
 
-## Practice Exercises
+</details>
+
+<details>
+<summary>Practice Exercises</summary>
 
 ### Exercise 1: Basic Compression
 
@@ -609,6 +628,9 @@ ls -lh file*.gz
 # Decompress all
 gunzip file*.gz
 ```
+</details>
+
+***
 
 ## Quick Reference
 
@@ -672,6 +694,7 @@ gzip file.fastq.gz    # Wastes time, no benefit
 ✓ **Check extension first**
 ```bash
 file file.fastq.gz    # Check if already compressed
+```
 ---
 
 **Key Takeaway:** In bioinformatics, compression is essential. Use `gzip` for active data, work with compressed files directly using `zcat`/`zgrep`/`zless`, and use `tar` to archive entire projects. This saves enormous amounts of disk space and time!
