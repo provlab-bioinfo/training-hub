@@ -1,8 +1,10 @@
 # Tips and Tricks
 
 This tutorial covers keyboard shortcuts, efficiency hacks, and productivity tips that will make you a command line power user. These techniques will save you hours of work!
+***
 
-## Essential Keyboard Shortcuts
+<details>
+<summary>Essential Keyboard Shortcuts</summary>
 
 ### Command Line Editing
 
@@ -75,8 +77,10 @@ vim !$
 chmod +x script.sh
 ./!$           # Runs ./script.sh
 ```
+</details>
 
-## Tab Completion
+<details>
+<summary>Tab Completion</summary>
 
 Tab completion is the #1 time-saver. Master it!
 
@@ -129,8 +133,10 @@ grep pattern [Tab][Tab]  # Shows available files
 3. **Use it for commands** you partially remember
 4. **Works with paths** - tab through directories
 5. **Case sensitive** - start with correct case
+</details>
 
-## Command History
+<details>
+<summary>Command History</summary>
 
 ### Searching History
 
@@ -212,8 +218,10 @@ history
 echo 'export HISTSIZE=10000' >> ~/.bashrc
 echo 'export HISTCONTROL=ignoredups' >> ~/.bashrc
 ```
+</details>
 
-## Aliases - Custom Shortcuts
+<details>
+<summary>Aliases - Custom Shortcuts</summary>
 
 Aliases create shortcuts for frequently used commands.
 
@@ -278,8 +286,10 @@ alias              # List all aliases
 unalias ll         # Remove alias
 \ll                # Run command without alias (bypass)
 ```
+</details>
 
-## Wildcards and Brace Expansion
+<details>
+<summary>Wildcards and Brace Expansion</summary>
 
 ### Wildcard Patterns
 
@@ -344,8 +354,10 @@ mkdir results_{2024..2025}_{01..12}
 # Process ranges
 for i in {1..10}; do echo "Processing sample $i"; done
 ```
+</details>
 
-## Command Substitution
+<details>
+<summary>Command Substitution</summary>
 
 Execute a command and use its output in another command.
 
@@ -397,8 +409,10 @@ echo "Total reads: $((reads / 4))"
 free_space=$(df -h . | tail -1 | awk '{print $4}')
 echo "Free space: $free_space"
 ```
+</details>
 
-## Finding Files Quickly
+<details>
+<summary>Finding Files Quickly</summary>
 
 ### The `locate` Command
 
@@ -430,8 +444,10 @@ find . -mmin -30     # Last 30 minutes
 # Find by size efficiently
 find . -size +100M -name "*.bam"
 ```
+</details>
 
-## One-Liners for Bioinformatics
+<details>
+<summary>One-Liners for Bioinformatics</summary>
 
 ### FASTA Operations
 
@@ -528,8 +544,10 @@ comm -12 <(sort list1.txt) <(sort list2.txt)
 # Find unique to first list
 comm -23 <(sort list1.txt) <(sort list2.txt)
 ```
+</details>
 
-## Shell Variables and Environment
+<details>
+<summary>Shell Variables and Environment</summary>
 
 ### Using Variables
 
@@ -569,8 +587,10 @@ OUTPUT_DIR="$HOME/results"
 mkdir -p $OUTPUT_DIR
 echo "Results saved to $OUTPUT_DIR"
 ```
+</details>
 
-## Efficient File Viewing
+<details>
+<summary>Efficient File Viewing</summary>
 
 ### Quick Checks
 
@@ -593,8 +613,10 @@ tail -n +2 file.txt | head
 ```bash
 cut -f1,3 file.tsv | less -S   # -S prevents line wrapping
 ```
+</details>
 
-## Time-Saving Tips
+<details>
+<summary>Time-Saving Tips</summary>
 
 ### 1. Use `time` to Benchmark
 
@@ -665,8 +687,10 @@ screen -S analysis
 # Detach: Ctrl+A, then D
 # Reattach: screen -r analysis
 ```
+</details>
 
-## Productivity Hacks
+<details>
+<summary>Productivity Hacks</summary>
 
 ### 1. Directory Stack
 
@@ -724,6 +748,7 @@ parse_git_branch() {
 }
 export PS1='\u@\h:\w$(parse_git_branch)\$ '
 ```
+</details>
 
 ## Practice Exercises
 
@@ -775,5 +800,6 @@ mkdir backup_$(date +%Y%m%d)
 # Count and report
 echo "Found $(ls *.txt | wc -l) text files"
 ```
+***
 
 **Key Takeaway:** Master keyboard shortcuts (especially Ctrl+R and Tab), use aliases for frequent commands, leverage history, and create one-liners for common tasks. These efficiency tips will save you hours every week!
