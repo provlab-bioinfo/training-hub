@@ -9,7 +9,10 @@ In bioinformatics, you'll constantly need to examine sequence files, check resul
 - **Large files**: Some bioinformatics files are too large for regular editors
 - **Quick checks**: Peek at data structure before processing
 
-## The `cat` Command - Show Everything
+***
+
+<details>
+  <summary>The `cat` Command - Show Everything</summary>
 
 `cat` stands for "concatenate" - it displays the entire contents of a file.
 
@@ -62,8 +65,10 @@ Output:
 cat file1.txt file2.txt file3.txt    # Show all files in sequence
 cat *.txt                            # Show all .txt files
 ```
+</details>
 
-## The `head` Command - Show the Beginning
+<details>
+<summary>The `head` Command - Show the Beginning</summary>
 
 `head` displays the first lines of a file. Perfect for checking file format or seeing what your data looks like.
 
@@ -201,8 +206,10 @@ tail -f fastqc.log
 ```bash
 tail -n +2 data.csv        # Skip first line (header)
 ```
+</details>
 
-## The `less` Command - Interactive Browsing
+<details>
+<summary>The `less` Command - Interactive Browsing</summary>
 
 `less` is a powerful pager that lets you scroll through files interactively. It's the most versatile viewing tool.
 
@@ -277,8 +284,10 @@ less -S alignment.sam      # -S prevents line wrapping
 ```bash
 less +F analysis.log       # Follow mode, Ctrl+C to stop following
 ```
+</details>
 
-## The `more` Command - Basic Pager
+<details>
+<summary>The `more` Command - Basic Pager</summary>
 
 `more` is an older, simpler pager. Similar to `less` but with fewer features.
 
@@ -362,8 +371,10 @@ Output shows counts for each file plus a total:
   300 file3.txt
   600 total
 ```
+</details>
 
-## Viewing Compressed Files
+<details>
+<summary>Viewing Compressed Files</summary>
 
 Many bioinformatics files are compressed (.gz). You can view them without decompressing!
 
@@ -415,8 +426,10 @@ zgrep "ATCGATCG" sequences.fasta.gz
 ```bash
 zless genome.fasta.gz
 ```
+</details>
 
-## Comparing Files Quickly
+<details>
+<summary>Comparing Files Quickly</summary>
 
 ### Show File Type
 
@@ -441,8 +454,10 @@ Combine `head` and `tail`:
 ```bash
 echo "=== First 5 lines ===" && head -n 5 file.txt && echo "=== Last 5 lines ===" && tail -n 5 file.txt
 ```
+</details>
 
-## Practical Workflows
+<details>
+<summary>Practical Workflows</summary>
 
 ### Workflow 1: Quick Data Check
 
@@ -505,8 +520,10 @@ grep ">" sequences.fasta | head
 less sequences.fasta
 # Then press / and type sequence name
 ```
+</details>
 
-## Practice Exercises
+<details>
+<summary>Practice Exercises</summary>
 
 ### Exercise 1: Basic Viewing
 
@@ -594,5 +611,8 @@ cat file                   # Then view
 ```bash
 zless file.gz              # View without decompressing
 ```
+</details>
+
+***
 
 **Key Takeaway:** Different viewing commands for different needs. Use `head` for quick checks, `less` for browsing, `tail -f` for monitoring, and `wc` for counting. Master these and you'll efficiently inspect any bioinformatics data!
