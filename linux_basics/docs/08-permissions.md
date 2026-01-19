@@ -1,16 +1,20 @@
 # File Permissions
 
 Understanding file permissions is crucial for working safely on shared Linux servers. Permissions control who can read, modify, or execute your files. This tutorial explains Linux permissions and how to manage them.
+***
 
-## Why Permissions Matter
+<details>
+<summary>Why Permissions Matter</summary>
 
 On a shared server:
 - **Protect your data** - Prevent others from accidentally (or intentionally) modifying your files
 - **Share selectively** - Control who can access your results
 - **Run scripts** - Make analysis scripts executable
 - **Collaborate safely** - Work with colleagues while maintaining data integrity
+</details>
 
-## Understanding Permission Basics
+<details>
+<summary>Understanding Permission Basics</summary>
 
 Every file and directory has three sets of permissions for three types of users:
 
@@ -22,8 +26,10 @@ Each set has three permission types:
 - **Read (r)** - View file contents or list directory contents
 - **Write (w)** - Modify file or create/delete files in directory
 - **Execute (x)** - Run file as program or enter directory
+</details>
 
-## Viewing Permissions
+<details>
+<summary>Viewing Permissions</summary>
 
 Use `ls -l` to see permissions:
 
@@ -85,8 +91,10 @@ ls -l private_data/
 # Group: no access
 # Others: no access
 ```
+</details>
 
-## The `chmod` Command - Change Permissions
+<details>
+<summary>The `chmod` Command - Change Permissions</summary>
 
 `chmod` (change mode) modifies file permissions.
 
@@ -231,8 +239,10 @@ Result: -rwxr-xr-x
 0 (others)  = 0     = ---
 Result: drwx------
 ```
+</details>
 
-## Recursive Permission Changes
+<details>
+<summary>Recursive Permission Changes</summary>
 
 Use `-R` to change permissions recursively (for directories and all contents):
 
@@ -255,8 +265,10 @@ chmod -R 755 my_project/
 ```
 
 **⚠️ Warning:** Be careful with recursive changes - test on a copy first!
+</details>
 
-## Directory Permissions Explained
+<details>
+<summary>Directory Permissions Explained</summary>
 
 Directory permissions work differently:
 
@@ -286,8 +298,10 @@ chmod 755 directory/   # Standard: owner full, others can read/enter
 chmod 700 directory/   # Private: only owner can access
 chmod 775 directory/   # Shared: owner and group can modify
 ```
+</details>
 
-## Common Permission Scenarios
+<details>
+<summary>Common Permission Scenarios</summary>
 
 ### Scenario 1: Sharing Data with Collaborators
 
@@ -356,8 +370,10 @@ chmod 775 /shared/project_name/*
 # Set default permissions for new files
 # (This requires setting umask, covered in advanced topics)
 ```
+</details>
 
-## The `umask` Command
+<details>
+<summary>The `umask` Command</summary>
 
 `umask` sets default permissions for newly created files and directories.
 
@@ -414,8 +430,10 @@ chmod g+s file    # SetGID: runs with group's permissions
 ```
 
 These are typically only needed for system administration.
+</details>
 
-## Checking Permissions
+<details>
+<summary>Checking Permissions</summary>
 
 ### View Your File Permissions
 
@@ -448,8 +466,10 @@ test -w filename && echo "Can write" || echo "Cannot write"
 # Test if you can execute
 test -x filename && echo "Can execute" || echo "Cannot execute"
 ```
+</details>
 
-## Troubleshooting Permission Issues
+<details>
+<summary>Troubleshooting Permission Issues</summary>
 
 ### "Permission Denied" Errors
 
@@ -544,8 +564,10 @@ ls -ld .                 # Need write permission on directory
    # chmod 777 file.txt  # ❌ Security risk!
    # Use specific permissions instead
    ```
+</details>
 
-## Practice Exercises
+<details>
+<summary>Practice Exercises</summary>
 
 ### Exercise 1: Basic Permission Changes
 
@@ -624,6 +646,9 @@ ls -l perm_test.txt
 chmod 755 perm_test.txt    # Executable
 ls -l perm_test.txt
 ```
+</details>
+
+***
 
 ## Quick Reference
 
@@ -688,5 +713,6 @@ chmod -R 777 /        # ❌ NEVER DO THIS!
 ```bash
 chmod -R 755 my_project/  # Only affect your project
 ```
+***
 
 **Key Takeaway:** Permissions control who can read, modify, and execute your files. Use `chmod 644` for data files, `chmod 755` for scripts and directories, and `chmod 700` for private data. Understanding permissions keeps your data safe on shared servers!
