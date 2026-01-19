@@ -1,8 +1,10 @@
 # Searching and Finding
 
 Finding specific content in files and locating files themselves are essential skills in bioinformatics. This tutorial covers the powerful `grep` and `find` commands that will save you countless hours.
+***
 
-## The `grep` Command - Search Inside Files
+<details>
+<summary>The `grep` Command - Search Inside Files</summary>
 
 `grep` stands for "Global Regular Expression Print" - it searches for text patterns within files. This is one of the most useful commands you'll ever learn!
 
@@ -155,8 +157,10 @@ grep "successfully completed" job.*.log
 ```bash
 grep -w "BRCA1" annotations.gtf   # Whole word only
 ```
+</details>
 
-## Search Multiple Files
+<details>
+<summary>Search Multiple Files</summary>
 
 ### Search All Files in Current Directory
 
@@ -247,8 +251,10 @@ grep -E "chr(1|2|3|X|Y)" genes.gtf          # Specific chromosomes
 grep -E "SNP|INDEL" variants.vcf            # Either variant type
 grep -E "ATG[ATCG]{3}(TAA|TAG|TGA)" seq.fa  # Start codon + 3 bases + stop codon
 ```
+</details>
 
-## The `find` Command - Locate Files
+<details>
+<summary>The `find` Command - Locate Files</summary>
 
 While `grep` searches inside files, `find` searches for files themselves based on name, size, date, etc.
 
@@ -406,8 +412,10 @@ find . -maxdepth 1 -name "*.txt"          # Current directory only
 find . -maxdepth 2 -name "*.fasta"        # Current dir and 1 level down
 find . -mindepth 2 -name "*.bam"          # At least 2 levels deep
 ```
+</details>
 
-## Practical Workflows
+<details>
+<summary>Practical Workflows</summary>    
 
 ### Workflow 1: Find and Count Sequences
 
@@ -518,8 +526,10 @@ find . -newermt "2024-01-01" ! -newermt "2024-02-01"
 ```bash
 find . -type f -printf "%f\n" | sort | uniq -d
 ```
+</details>
 
-## Practice Exercises
+<details>
+<summary>Practice Exercises</summary>    
 
 ### Exercise 1: Basic grep
 
@@ -570,6 +580,7 @@ find . -name "*.fastq" -exec wc -l {} \;
 # Find files containing specific text
 find . -name "*.txt" -exec grep -l "TODO" {} +
 ```
+</details>
 
 ## Quick Reference
 
@@ -640,5 +651,6 @@ find . -name "*.tmp" -delete # Immediately deletes!
 find . -name "*.tmp"         # Review list
 find . -name "*.tmp" -delete # Then delete
 ```
+***
 
 **Key Takeaway:** `grep` searches inside files, `find` searches for files. Master these two commands and you'll be able to locate any data quickly. They're among the most powerful tools in your Linux toolkit!
