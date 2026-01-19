@@ -1,8 +1,9 @@
 # Beginner Exercise 3: Viewing Files
 
 Master the essential commands for viewing and examining file contents without editing them.
+***
 
-## Setup
+<details><summary> Setup</summary>
 
 Create practice files with realistic bioinformatics data:
 
@@ -78,8 +79,9 @@ EOF
 # Create a large file for practice
 seq 1 1000 | awk '{print "Line " $1 ": Data value " $1 * 3.14}' > large_file.txt
 ```
+</details>
 
-## Exercise 3.1: Basic File Viewing with cat
+<details><summary> Exercise 3.1: Basic File Viewing with cat</summary>
 
 **Tasks:**
 1. View the entire gene_list.txt file
@@ -90,8 +92,9 @@ seq 1 1000 | awk '{print "Line " $1 ": Data value " $1 * 3.14}' > large_file.txt
 **Questions:**
 - When is `cat` appropriate to use?
 - When should you avoid using `cat`?
+</details>
 
-## Exercise 3.2: cat Options
+<details><summary> Exercise 3.2: cat Options</summary>
 
 **Tasks:**
 1. Display gene_list.txt with line numbers
@@ -104,8 +107,8 @@ cat -n gene_list.txt
 cat -b gene_list.txt
 cat gene_list.txt expression_data.tsv
 ```
-
-## Exercise 3.3: Viewing File Beginnings with head
+</details>
+<details><summary> Exercise 3.3: Viewing File Beginnings with head</summary>
 
 **Tasks:**
 1. View the first 10 lines of large_file.txt
@@ -120,8 +123,8 @@ head large_file.txt
 head -n 5 gene_list.txt
 head -5 gene_list.txt      # Shortcut
 ```
-
-## Exercise 3.4: FASTA File Inspection
+</details>
+<details><summary> Exercise 3.4: FASTA File Inspection</summary>
 
 **Tasks:**
 1. View the first sequence in sequences.fasta (header + sequence lines)
@@ -132,8 +135,8 @@ head -5 gene_list.txt      # Shortcut
 **Hints:**
 - Count the lines per sequence
 - Headers start with `>`
-
-## Exercise 3.5: Viewing File Endings with tail
+</details>
+<details><summary> Exercise 3.5: Viewing File Endings with tail</summary>
 
 **Tasks:**
 1. View the last 10 lines of analysis.log
@@ -141,8 +144,8 @@ head -5 gene_list.txt      # Shortcut
 3. View the last 20 lines of large_file.txt
 4. View just the last line of analysis.log (when did analysis finish?)
 5. Check the last entry in expression_data.tsv
-
-## Exercise 3.6: Monitoring Files with tail -f
+</details>
+<details><summary> Exercise 3.6: Monitoring Files with tail -f</summary>
 
 **Tasks:**
 1. Open a second terminal window or tab
@@ -164,8 +167,8 @@ echo "[$(date)] New log entry" >> analysis.log
 - Monitoring job progress
 - Watching alignment logs
 - Following pipeline execution
-
-## Exercise 3.7: Interactive Browsing with less
+</details>
+<details><summary> Exercise 3.7: Interactive Browsing with less</summary>
 
 **Tasks:**
 1. Open large_file.txt with less
@@ -186,8 +189,8 @@ echo "[$(date)] New log entry" >> analysis.log
 less large_file.txt
 less sequences.fasta
 ```
-
-## Exercise 3.8: less Advanced Features
+</details>
+<details><summary> Exercise 3.8: less Advanced Features</summary>
 
 **Tasks:**
 1. Open expression_data.tsv with less -S (no line wrapping)
@@ -200,8 +203,8 @@ less sequences.fasta
 less -S expression_data.tsv
 less -N gene_list.txt
 ```
-
-## Exercise 3.9: Counting with wc
+</details>
+<details><summary> Exercise 3.9: Counting with wc</summary>
 
 **Tasks:**
 1. Count lines in gene_list.txt
@@ -218,8 +221,8 @@ wc -c gene_list.txt
 wc gene_list.txt
 wc -l *.txt
 ```
-
-## Exercise 3.10: FASTA File Analysis
+</details>
+<details><summary> Exercise 3.10: FASTA File Analysis</summary>
 
 **Tasks:**
 1. Count how many sequences are in sequences.fasta
@@ -233,8 +236,8 @@ wc -l *.txt
 grep -c ">" sequences.fasta
 wc -l sequences.fasta
 ```
-
-## Exercise 3.11: Log File Analysis
+</details>
+<details><summary> Exercise 3.11: Log File Analysis</summary>
 
 **Tasks:**
 1. When did the analysis start? (first line)
@@ -250,8 +253,8 @@ tail -1 analysis.log
 wc -l analysis.log
 grep "Processing sample" analysis.log
 ```
-
-## Exercise 3.12: Viewing Specific Sections
+</details>
+<details><summary> Exercise 3.12: Viewing Specific Sections</summary>
 
 **Tasks:**
 1. View lines 10-20 of large_file.txt
@@ -264,8 +267,8 @@ head -20 large_file.txt | tail -11
 tail -n +2 expression_data.tsv
 sed -n '10,20p' large_file.txt
 ```
-
-## Exercise 3.13: File Comparison
+</details>
+<details><summary> Exercise 3.13: File Comparison</summary>
 
 **Tasks:**
 1. Create two gene lists:
@@ -277,8 +280,8 @@ tail -10 gene_list.txt > genes_set2.txt
 2. View both files side by side (in separate windows/panes)
 3. Count genes in each file
 4. Identify which genes are in set1 vs set2
-
-## Exercise 3.14: Working with Compressed Files
+</details>
+<details><summary> Exercise 3.14: Working with Compressed Files</summary>
 
 **Tasks:**
 1. Compress sequences.fasta:
@@ -305,8 +308,8 @@ zgrep -c ">" sequences.fasta.gz
 ```bash
 zless sequences.fasta.gz
 ```
-
-## Exercise 3.15: Real-World Scenario - Quality Check
+</details>
+<details><summary> Exercise 3.15: Real-World Scenario - Quality Check</summary>
 
 **Scenario:** You received a FASTQ file and need to do a quick quality check.
 
@@ -338,8 +341,8 @@ EOF
 3. View the read ID format
 4. Check quality score line format
 5. Sample first 2 reads and last 2 reads
-
-## Exercise 3.16: Expression Data Inspection
+</details>
+<details><summary> Exercise 3.16: Expression Data Inspection</summary>
 
 **Tasks using expression_data.tsv:**
 1. View the entire file
@@ -356,8 +359,8 @@ head -1 expression_data.tsv
 cut -f1 expression_data.tsv
 grep "BRCA1" expression_data.tsv
 ```
-
-## Challenge Exercise 3.17: Create a Quick QC Script
+</details>
+<details><summary> Challenge Exercise 3.17: Create a Quick QC Script</summary>
 
 **Task:** Create a simple script that checks a file and reports:
 1. File size
@@ -384,8 +387,8 @@ echo "Word count: $(wc -w < $FILE)"
 ```
 
 Save as `qc_check.sh`, make executable, and test!
-
-## Exercise 3.18: Viewing Multiple Files
+</details>
+<details><summary> Exercise 3.18: Viewing Multiple Files</summary>
 
 **Tasks:**
 1. View all .txt files in order
@@ -400,8 +403,8 @@ head *.txt                    # Shows filenames
 ls -lh
 ls -lh | sort -k5 -h
 ```
-
-## Exercise 3.19: Choosing the Right Tool
+</details>
+<details><summary> Exercise 3.19: Choosing the Right Tool</summary>
 
 **For each scenario, which command would you use?**
 
@@ -414,8 +417,8 @@ ls -lh | sort -k5 -h
 7. View a table with many columns
 
 **Options:** cat, head, tail, less, wc, tail -f, zless
-
-## Exercise 3.20: Cleanup and Best Practices
+</details>
+<details><summary> Exercise 3.20: Cleanup and Best Practices</summary>
 
 **Tasks:**
 1. Count total files created in this exercise
@@ -432,8 +435,8 @@ ls -lhS
 rm large_file.txt
 gzip *.fasta *.log
 ```
-
-## Common Mistakes - Can You Identify Them?
+</details>
+<details><summary> Common Mistakes - Can You Identify Them?</summary>
 
 **Scenario 1:**
 ```bash
@@ -458,8 +461,8 @@ tail -f static_file.txt  # Nothing happens
 less file.txt.gz         # Gibberish appears
 ```
 **What command should you use?**
-
-## Reflection Questions
+</details>
+<details><summary> Reflection Questions</summary>
 
 1. What's the difference between `cat` and `less`?
 2. When would you use `head` vs `tail`?
@@ -467,16 +470,27 @@ less file.txt.gz         # Gibberish appears
 4. Why use `less` instead of opening in an editor?
 5. How do you count lines without displaying them all?
 6. What's the advantage of `zless` over `gunzip` then `less`?
+</details>
 
-## Best Practices Learned
+<details><summary> Best Practices Learned</summary>
 
 ✓ **Use `less` for large files** - Don't flood your terminal
+
 ✓ **Use `head` for quick checks** - See file format quickly
+
 ✓ **Use `tail -f` for monitoring** - Watch jobs in real-time
+
 ✓ **Use `wc -l` for counting** - Faster than viewing entire file
+
 ✓ **Use z-commands for compressed files** - Save time and space
+
 ✓ **Check file size first** - Before attempting to view
+
 ✓ **Use appropriate tool** - Match tool to task
+
+</details>
+
+***
 
 ## Quick Reference
 
