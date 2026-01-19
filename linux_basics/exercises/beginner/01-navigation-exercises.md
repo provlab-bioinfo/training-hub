@@ -3,7 +3,9 @@ Complete solutions for beginner exercises. Try solving on your own first!
 
 ## Exercise 1: Navigation Solutions
 
-### Exercise 1.1: Finding Your Way
+<details>
+<summary>Exercise 1.1: Finding Your Way</summary>
+   
 ```bash
 # 1. Print current directory
 pwd
@@ -20,8 +22,11 @@ pwd
 # 5. Go back to practice_nav
 cd ..
 ```
+</details>
 
-### Exercise 1.2: Relative and Absolute Paths
+<details>
+<summary>Exercise 1.2: Relative and Absolute Paths</summary>
+   
 ```bash
 # 1. Navigate to project1/data (relative)
 cd project1/data
@@ -39,8 +44,11 @@ cd ~
 # Or just
 cd
 ```
+</details>
 
-### Exercise 1.3: Exploring with ls
+<details>
+<summary>Exercise 1.3: Exploring with ls</summary>
+
 ```bash
 # 1. Long format
 ls -l
@@ -59,8 +67,11 @@ ls -d */
 # Or
 ls -l | grep ^d
 ```
+</details>
 
-### Exercise 1.4: Quick Navigation
+<details>
+<summary>Exercise 1.4: Quick Navigation</summary>
+   
 ```bash
 # 1. Navigate to project1/scripts
 cd project1/scripts
@@ -79,8 +90,11 @@ cd project2/raw_data
 # Or from anywhere:
 cd ~/practice_nav/project2/raw_data
 ```
+</details>
 
-### Exercise 1.5: Directory Tree Navigation
+<details>
+<summary>Exercise 1.5: Directory Tree Navigation</summary>
+   
 ```bash
 # 1. From home, navigate to project1/data
 cd ~/practice_nav/project1/data
@@ -97,8 +111,11 @@ cd ../../..
 # 5. Return to practice_nav/project2/results
 cd practice_nav/project2/results
 ```
+</details>
 
-### Exercise 1.6: Working with Multiple Directories
+<details>
+<summary>Exercise 1.6: Working with Multiple Directories</summary>
+   
 ```bash
 # 1. Create bookmark using variables
 PROJECT1=~/practice_nav/project1
@@ -117,8 +134,11 @@ pushd ~/practice_nav/project2
 popd
 popd
 ```
+</details>
 
-### Exercise 1.7: Real-World Scenario
+<details>
+<summary>Exercise 1.7: Real-World Scenario</summary>
+   
 ```bash
 # From project1/results:
 # 1. Copy script
@@ -133,8 +153,11 @@ mkdir figures
 # 4. Navigate to project2/analysis
 cd ../../project2/analysis
 ```
+</details>
 
-### Exercise 1.8: Path Verification
+<details>
+<summary>Exercise 1.8: Path Verification</summary>
+   
 ```bash
 # 1. Verify you're in the right directory
 pwd
@@ -149,8 +172,11 @@ realpath ../data
 # 4. Find all project directories from home
 find ~/practice_nav -type d -name "project*"
 ```
+</details>
 
-### Exercise 1.9: Troubleshooting
+<details>
+<summary>Exercise 1.9: Troubleshooting</summary>
+   
 ```bash
 # Mistake 1: Typo
 cd porject1
@@ -176,8 +202,11 @@ cd ~/practice_nav/project1
 # Or if already nearby
 cd ../practice_nav/project1
 ```
+</details>
 
-### Exercise 1.10: Advanced Navigation Techniques
+<details>
+<summary>Exercise 1.10: Advanced Navigation Techniques</summary>
+   
 ```bash
 # 1. Navigate using wildcards (if unique)
 cd ~/practice_nav/proj*/data
@@ -197,6 +226,7 @@ cd ~/practice_nav/{project1,project2}
 # 5. Find and navigate to a directory
 cd $(find ~/practice_nav -type d -name "scripts" | head -1)
 ```
+</details>
 
 ## Common Navigation Shortcuts Reference
 
