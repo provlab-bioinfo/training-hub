@@ -10,8 +10,10 @@ Think of Linux commands as LEGO blocks. Each command does one thing well, but yo
 - **Pipe (`|`)** - Send output of one command to another
 - **Redirect (`>`, `>>`)** - Send output to a file
 - **Input (`<`)** - Read input from a file
+***
 
-## Redirecting Output to Files
+<details>
+<summary>Redirecting Output to Files</summary>
 
 ### The `>` Operator - Overwrite
 
@@ -114,8 +116,10 @@ fastqc *.fastq &> fastqc_run.log
 # Ignore error messages
 grep "pattern" * 2>/dev/null               # Suppress "Permission denied" errors
 ```
+</details>
 
-## The Pipe Operator `|`
+<details>
+<summary>The Pipe Operator `|`</summary>
 
 A pipe takes the output of one command and sends it as input to another command.
 
@@ -216,8 +220,10 @@ grep -i "error" *.log | cut -d':' -f2 | sort | uniq -c | sort -rn | head -5
 # List FASTQ files, extract sample names, sort, count
 ls *.fastq | sed 's/_R[12].fastq//' | sort | uniq | wc -l
 ```
+</details>
 
-## Input Redirection `<`
+<details>
+<summary>Input Redirection `<`</summary>
 
 Send file contents as input to a command:
 
@@ -246,8 +252,10 @@ sort input.txt > output.txt
 ```
 
 Most commands can read from files directly, so `<` is less frequently used. It's mainly useful when a command expects stdin but you have a file.
+</details>
 
-## Combining Pipes and Redirects
+<details>
+<summary>Combining Pipes and Redirects</summary>
 
 You can use pipes and redirects together!
 
@@ -285,8 +293,10 @@ ls *.fastq | wc -l | awk '{print "Found " $1 " FASTQ files"}' >> analysis.log
 grep -c ">" reference.fasta | awk '{print "Reference has " $1 " sequences"}' >> analysis.log
 echo "Analysis complete: $(date)" >> analysis.log
 ```
+</details>
 
-## The `tee` Command - Split Output
+<details>
+<summary>The `tee` Command - Split Output</summary>
 
 `tee` reads from stdin and writes to both stdout AND a file. It's like a T-junction in a pipe.
 
@@ -324,8 +334,10 @@ samtools flagstat alignment.bam | tee stats.txt
 echo "Processing sample1" | tee -a analysis.log
 fastqc sample1.fastq 2>&1 | tee -a analysis.log
 ```
+</details>
 
-## Practical Workflows
+<details>
+<summary>Practical Workflows</summary>    
 
 ### Workflow 1: FASTA File Analysis
 
@@ -434,8 +446,10 @@ grep "successfully completed" *.log | wc -l | awk '{print $1 " jobs completed"}'
     du -sh .
 } > summary_report.txt
 ```
+</details>
 
-## Command Substitution
+<details>
+<summary>Command Substitution</summary>
 
 Use `$(command)` to insert command output into another command:
 
@@ -461,8 +475,10 @@ echo "Total reads: $((total_reads / 4))"
 # Create dated backup
 cp important_data.txt important_data_$(date +%Y%m%d).txt
 ```
+</details>
 
-## Here Documents
+<details>
+<summary>Here Documents</summary>
 
 Create multi-line input on the fly:
 
@@ -486,8 +502,10 @@ echo "Complete"
 EOF
 chmod +x analyze.sh
 ```
+</details>
 
-## Process Substitution
+<details>
+<summary>Process Substitution</summary>
 
 Treat command output as a file:
 
@@ -504,8 +522,10 @@ diff <(cut -f1 genes1.txt | sort) <(cut -f1 genes2.txt | sort)
 # Compare sequence counts
 diff <(grep -c ">" set1.fasta) <(grep -c ">" set2.fasta)
 ```
+</details>
 
-## Best Practices
+<details>
+<summary>Best Practices</summary>    
 
 1. **Build pipelines incrementally** - Test each step
    ```bash
@@ -535,8 +555,10 @@ diff <(grep -c ">" set1.fasta) <(grep -c ">" set2.fasta)
    # Extract genes, filter by chromosome, count unique
    grep "gene" file.gtf | awk '$1=="chr1"' | cut -f9 | sort -u | wc -l
    ```
+</details>
 
-## Practice Exercises
+<details>
+<summary>Practice Exercises</summary>
 
 ### Exercise 1: Basic Redirects
 
@@ -599,6 +621,9 @@ ls -l | tee file_list.txt | wc -l
 # Multi-step with tee
 cat test.fasta | grep ">" | tee ids.txt | wc -l
 ```
+</details>
+
+***
 
 ## Quick Reference
 
@@ -640,6 +665,8 @@ echo Analysis complete > log.txt     # Only "Analysis" goes to file
 ✓ **Use quotes**
 ```bash
 echo "Analysis complete" > log.txt   # Entire message goes to file
----
+```
+
+***
 
 **Key Takeaway:** Pipes and redirects are the secret sauce of Linux. They let you build powerful data processing pipelines by connecting simple commands. Master `|`, `>`, and `>>`, and you'll be able to handle complex bioinformatics workflows with ease!
