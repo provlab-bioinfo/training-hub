@@ -2,11 +2,14 @@
 
 Welcome to your first steps in the Linux command line! This guide will help you connect to our Linux server and run your first commands.
 
-## What is the Command Line?
+<details>
+<summary>What is the Command Line?</summary>
 
 The command line (also called terminal or shell) is a text-based interface where you type commands to tell the computer what to do. While it might seem less intuitive than clicking icons, it's much more powerful for handling biological data and running bioinformatics tools.
 
 Think of it as having a conversation with the computer using a specific language. You type a command, press Enter, and the computer responds.
+
+</details>
 
 ## Launch PuTTY
 
@@ -17,7 +20,8 @@ Most of our users work from Windows computers and use **PuTTY** to connect to th
 
 ### Connecting to the Server
 
-#### Step 1: Enter Server Details
+<details>
+<summary>Step 1: Enter Server Details</summary>
 
 In the PuTTY Configuration window:
 
@@ -29,20 +33,29 @@ Connection type: SSH
 
 > **Note:** Replace `your_server_address` with the actual server address provided by your administrator.
 
-#### Step 2: Save Your Session (Recommended)
+</details>
+
+<details>
+<summary>Step 2: Save Your Session (Recommended)</summary>
 
 Before clicking "Open":
 1. In the "Saved Sessions" field, type a name like "BioServer"
 2. Click the "Save" button
 3. Next time, you can just double-click "BioServer" to connect!
 
-#### Step 3: Connect
+</details>
+
+<details>
+<summary>Step 3: Connect</summary>
 
 1. Click the "Open" button
 2. **First time only:** You'll see a security alert about the server's key
    - Click "Accept" or "Yes" - this is normal and safe
 
-#### Step 4: Login
+</details>
+
+<details>
+<summary>Step 4: Login</summary>
 
 You'll see a black terminal window:
 
@@ -55,7 +68,10 @@ login as:
 
 > **Important:** When typing your password, you won't see any characters (not even dots or asterisks). This is a security feature. Just type your password and press Enter.
 
-#### Step 5: Success!
+</details>
+
+<details>
+<summary>Step 5: Success!</summary>
 
 If login is successful, you'll see a welcome message and then your **prompt**:
 
@@ -69,7 +85,10 @@ This is where you'll type commands. The prompt shows:
 - Your current directory (`~` means home directory)
 - `$` indicates you're ready to type a command
 
-## PuTTY Tips and Tricks
+</details>
+
+<details>
+<summary>PuTTY Tips and Tricks</summary>
 
 ### Copy and Paste
 
@@ -104,11 +123,14 @@ If you work with multiple servers:
 3. Click "Save" for each
 4. Switch between servers by loading different saved sessions
 
+</details>
+
 ## Your First Commands
 
 Now that you're connected, let's try some basic commands!
 
-### Finding Out Who You Are
+<details>
+<summary>Finding Out Who You Are</summary>
 
 ```bash
 whoami
@@ -121,7 +143,10 @@ This shows your username. Simple, but useful to confirm you're logged in correct
 jsmith
 ```
 
-### Where Am I?
+</details>
+
+<details>
+<summary>Where Am I?</summary>
 
 ```bash
 pwd
@@ -136,7 +161,10 @@ pwd
 
 This means you're in your home directory.
 
-### What Time Is It?
+</details>
+
+<details>
+<summary>What Time Is It?</summary>
 
 ```bash
 date
@@ -149,7 +177,10 @@ Shows the current date and time on the server.
 Tue Nov  4 10:30:45 MST 2025
 ```
 
-### What's Around Me?
+</details>
+
+<details>
+<summary>What's Around Me?</summary>
 
 ```bash
 ls
@@ -162,7 +193,10 @@ ls
 Documents  Downloads  projects  sequences.fasta
 ```
 
-### Getting Help
+</details>
+
+<details>
+<summary>Getting Help</summary>
 
 Every command has a manual page:
 
@@ -181,7 +215,10 @@ For quick help:
 ls --help
 ```
 
-## Understanding Command Structure
+</details>
+
+<details>
+<summary>Understanding Command Structure</summary>
 
 Most Linux commands follow this pattern:
 
@@ -214,7 +251,10 @@ ls -lth         # Long format, human-readable, sorted by time
 You can combine options:
 - `ls -l -h` is the same as `ls -lh`
 
-## Common Mistakes (We All Make Them!)
+</details>
+
+<details>
+<summary>Common Mistakes (We All Make Them!)</summary>
 
 ### 1. Case Sensitivity
 
@@ -255,7 +295,10 @@ You probably meant `ls`. Check your spelling!
 
 Sometimes you can't edit or delete a file because of permissions. We'll cover this in [Tutorial 8](08-permissions.md).
 
-## Practice Exercises
+</details>
+
+<details>
+<summary>Practice Exercises</summary>
 
 Try these commands to get comfortable:
 
@@ -290,6 +333,8 @@ Try these commands to get comfortable:
    ```
    (press `q` to exit)
 
+</details>
+
 ## Exiting and Disconnecting
 
 When you're done working:
@@ -302,7 +347,8 @@ Or simply close the PuTTY window.
 
 Your session will end, but your files and data remain safely on the server.
 
-## Troubleshooting
+<details>
+<summary>Troubleshooting</summary>
 
 ### Can't Connect to Server
 
@@ -328,6 +374,8 @@ Your session will end, but your files and data remain safely on the server.
 
 - Go to PuTTY Configuration → Window → Translation
 - Set "Remote character set" to UTF-8
+
+</details>
 
 ## Quick Reference
 
