@@ -4,7 +4,8 @@ Now that you can navigate the file system, it's time to learn how to create, cop
 
 ## Creating Directories
 
-### The `mkdir` Command
+<details>
+<summary>The `mkdir` Command</summary>
 
 `mkdir` stands for "make directory" - it creates new folders.
 
@@ -24,8 +25,10 @@ mkdir -p analysis/fastq_files/raw_data
 ```
 
 The `-p` flag creates all parent directories if they don't exist. Without `-p`, this would fail if `analysis` or `fastq_files` didn't already exist.
+</details>
 
-### Practical Example: Project Structure
+<details>
+<summary>Practical Example: Project Structure</summary>
 
 Create a typical bioinformatics project structure:
 
@@ -50,13 +53,13 @@ Check your work:
 ```bash
 ls -l my_rna_seq
 ```
+</details>
 
 ## Creating Files
-
-### The `touch` Command
+<details>
+<summary>The `touch` Command</summary>
 
 `touch` creates empty files or updates the timestamp of existing files.
-
 ```bash
 touch README.txt
 touch experiment_notes.txt
@@ -64,12 +67,14 @@ touch sample_list.txt
 ```
 
 Create multiple files:
-
 ```bash
 touch file1.txt file2.txt file3.txt
 ```
 
-### Why Create Empty Files?
+</details>
+
+ <details>
+  <summary> Why Create Empty Files?</summary>
 
 You might wonder why create an empty file. Common reasons:
 - Placeholder for future content
@@ -77,8 +82,10 @@ You might wonder why create an empty file. Common reasons:
 - Test file operations before using real data
 
 For actual content, you'll use a text editor (we'll cover this later) or redirect output from commands.
+</details>
 
-## Copying Files
+<details>
+  <summary>Copying Files</summary>
 
 ### The `cp` Command
 
@@ -150,8 +157,10 @@ cp /shared/genomes/hg38.fasta ~/my_project/reference/
 # Copy results to archive location
 cp -r results ~/archive/experiment_$(date +%Y%m%d)/
 ```
+</details>
 
-## Moving and Renaming Files
+<details>
+  <summary>Moving and Renaming Files</summary>
 
 ### The `mv` Command
 
@@ -211,8 +220,10 @@ mv results.txt results_2025-11-04.txt
 ```bash
 mv old_scripts/* scripts/     # Move contents of old_scripts to scripts
 ```
+</details>
 
-## Deleting Files and Directories
+<details>
+  <summary>Deleting Files and Directories</summary>
 
 ### ⚠️ IMPORTANT WARNING ⚠️
 
@@ -296,8 +307,10 @@ rm -rf *                     # Deletes everything in current directory!
 ```
 
 The `-f` flag means "force" - it doesn't ask for confirmation. Combined with `-r` (recursive), it's very dangerous.
+</details>
 
-## Wildcards for Bulk Operations
+<details>
+  <summary>Wildcards for Bulk Operations</summary>
 
 Wildcards let you work with multiple files at once.
 
@@ -351,8 +364,10 @@ ls -lh *.fasta *.fa
 mv sample[1-9]*.fastq batch1/
 mv sample[1-5][0-9]*.fastq batch2/
 ```
+</details>
 
-## Checking Before You Act
+<details>
+  <summary>Checking Before You Act</summary>  
 
 Always verify before bulk operations:
 
@@ -371,8 +386,11 @@ ls sample*.fastq            # See what will move
 # Execute
 mv sample*.fastq raw_data/
 ```
+</details>
 
-## Practical Workflows
+
+<details>
+  <summary>Practical Workflows</summary>
 
 ### Workflow 1: Setting Up a New Analysis
 
@@ -461,8 +479,10 @@ ls test* ~/.trash/
 # Final deletion with confirmation
 rm -i test3.txt
 ```
+</details>
 
-## Quick Reference
+<details>
+  <summary>Quick Reference</summary>  
 
 | Command | Description | Example |
 |---------|-------------|---------|
@@ -505,5 +525,8 @@ mv new_data.txt important_data.txt  # Overwrites important_data.txt!
 ```bash
 mv -i new_data.txt important_data.txt  # Asks before overwriting
 ```
+</details>
+
+***
 
 **Key Takeaway:** File operations are powerful but permanent. Always use `-i` for important operations, check with `ls` before bulk actions, and remember: there's no undo button in Linux!
