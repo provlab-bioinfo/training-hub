@@ -1,8 +1,10 @@
 # Text Processing
 
 Text processing is where Linux truly shines. Bioinformatics involves manipulating large text files - extracting columns, sorting data, removing duplicates, and transforming formats. This tutorial covers essential text processing tools.
+***
 
-## The `cut` Command - Extract Columns
+<details>
+<summary>The `cut` Command - Extract Columns</summary>
 
 `cut` extracts specific columns from files. Perfect for tabular data like TSV, CSV, and annotation files.
 
@@ -61,8 +63,10 @@ cut -c1-10 file.txt       # Characters (positions 1-10)
 cut -d':' -f2 file.txt    # Custom delimiter
 cut -f1 --complement      # All EXCEPT field 1
 ```
+</details>
 
-## The `sort` Command - Sort Lines
+<details>
+<summary>The `sort` Command - Sort Lines</summary>
 
 `sort` arranges lines in order. Essential for data organization and preparing for `uniq`.
 
@@ -124,8 +128,10 @@ sort gene_names.txt > sorted_genes.txt
 ```bash
 sort -k2,2n data.txt > sorted_data.txt
 ```
+</details>
 
-## The `uniq` Command - Remove Duplicates
+<details>
+<summary>The `uniq` Command - Remove Duplicates</summary>
 
 `uniq` removes adjacent duplicate lines. **Important:** File must be sorted first!
 
@@ -164,8 +170,10 @@ grep -v ">" seqs.fasta | fold -w3 | sort | uniq -c | sort -rn | head
 ```bash
 grep -v "^#" variants.vcf | cut -f1 | sort | uniq -c
 ```
+</details>
 
-## The `tr` Command - Translate Characters
+<details>
+<summary>The `tr` Command - Translate Characters</summary>
 
 `tr` translates or deletes characters. Useful for format conversion.
 
@@ -205,8 +213,10 @@ tr -d '\r' < dos_file.txt > unix_file.txt
 ```bash
 cat sequence.fasta | tr -d '\n' | tr -cd 'ATCG' | wc -c
 ```
+</details>
 
-## The `awk` Command - Pattern Scanning and Processing
+<details>
+<summary>The `awk` Command - Pattern Scanning and Processing</summary>
 
 `awk` is a powerful text processing language. It processes files line by line, splitting each into fields.
 
@@ -314,8 +324,10 @@ awk -F'[,;]' '{print $1}' file.txt
 awk '{printf "%s\t%d\n", $1, $2}' file.txt
 awk '{printf "%-20s %10d\n", $1, $2}' file.txt  # Formatted columns
 ```
+</details>
 
-## The `sed` Command - Stream Editor
+<details>
+<summary>The `sed` Command - Stream Editor</summary>
 
 `sed` performs text transformations on streams. Great for find-and-replace operations.
 
@@ -382,8 +394,10 @@ sed = file.txt | sed 'N;s/\n/\t/'
 ```bash
 sed -n '/START/,/END/p' file.txt
 ```
+</details>
 
-## Combining Tools - Powerful Pipelines
+<details>
+<summary>Combining Tools - Powerful Pipelines</summary>
 
 The real power comes from combining these tools:
 
@@ -439,8 +453,10 @@ awk 'NR%4==1 {print ">"substr($0,2)} NR%4==2' reads.fastq > reads.fasta
 # Get high-quality SNPs from chromosome 1
 awk '$1=="chr1" && $6>30 && length($4)==1 && length($5)==1' variants.vcf | cut -f1,2,4,5 > chr1_snps.txt
 ```
+</details>
 
-## Practical Workflows
+<details>
+<summary>Practical Workflows</summary>
 
 ### Workflow 1: Summarize Annotation File
 
@@ -516,6 +532,7 @@ echo ""
 echo "First 10 quality strings:"
 zcat $FASTQ | awk 'NR%4==0' | head -10
 ```
+</details>
 
 ## Quick Reference
 
@@ -591,5 +608,6 @@ zcat $FASTQ | awk 'NR%4==0' | head -10
    cat file | step1 > temp1.txt
    cat temp1.txt | step2 > temp2.txt
    ```
+***
 
 **Key Takeaway:** Master `cut`, `sort`, `uniq`, `awk`, and `sed` for text processing. Combine them with pipes to create powerful data processing pipelines. These tools handle most bioinformatics text manipulation tasks efficiently!
