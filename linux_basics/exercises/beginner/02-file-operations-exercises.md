@@ -1,7 +1,7 @@
 
 ## Exercise 2: File Operations Solutions
 
-### Exercise 2.1: Creating Files and Directories
+<details> <summary> Exercise 2.1: Creating Files and Directories</summary>
 
 ```bash
 # 1. Create directory
@@ -19,8 +19,9 @@ touch experiment1/data/raw/reads.fastq
 # 5. Verify
 ls -R
 ```
+</details>
 
-### Exercise 2.2: Copying Files
+<details> <summary> Exercise 2.2: Copying Files</summary>
 
 ```bash
 # 1. Copy with new name
@@ -35,8 +36,9 @@ cp sample1.txt sample2.txt sample3.txt experiment1/data/
 # 4. Copy entire directory
 cp -r experiment1 experiment1_copy
 ```
+</details>
 
-### Exercise 2.3: Moving and Renaming
+<details> <summary> Exercise 2.3: Moving and Renaming</summary>
 
 ```bash
 # 1. Rename file
@@ -54,8 +56,9 @@ mv experiment1_copy archive/
 # 5. Rename directory
 mv experiment1 experiment_001
 ```
+</details>
 
-### Exercise 2.4: Wildcards
+<details> <summary> Exercise 2.4: Wildcards</summary>
 
 ```bash
 # 1. Create files
@@ -74,8 +77,9 @@ cp *.csv experiment_001/data/
 mkdir backup
 cp *.txt backup/
 ```
+</details>
 
-### Exercise 2.5: Safe Deletion
+<details> <summary> Exercise 2.5: Safe Deletion</summary>
 
 ```bash
 # 1-2. Create and delete
@@ -92,8 +96,9 @@ rm temp*.txt
 # 6. Delete directory
 rm -r backup
 ```
+</details>
 
-### Exercise 2.6: Creating Project Structure
+<details> <summary> Exercise 2.6: Creating Project Structure</summary>s
 
 ```bash
 # All in one command
@@ -102,8 +107,9 @@ mkdir -p rna_seq_project/{raw_data/{fastq,quality_reports},processed_data/{trimm
 # Verify
 ls -R rna_seq_project
 ```
+</details>
 
-### Exercise 2.7: Organizing Files
+<details> <summary> Exercise 2.7: Organizing Files</summary>
 
 ```bash
 # 1. Create subdirectories
@@ -118,8 +124,9 @@ mv messy_dir/*.sh messy_dir/scripts/
 # 6. Verify
 ls -R messy_dir/
 ```
+</details>
 
-### Exercise 2.8: Batch Operations
+<details> <summary> Exercise 2.8: Batch Operations</summary>
 
 ```bash
 # 1. Create files with brace expansion
@@ -136,8 +143,9 @@ done
 # 4. Copy directories
 cp -r sample_* backup_samples/
 ```
+</details>
 
-### Exercise 2.9: Real-World Scenario
+<details> <summary> Exercise 2.9: Real-World Scenario</summary>
 
 ```bash
 # 1. Create structure
@@ -157,8 +165,9 @@ mkdir sequencing_run/sample_{A,B,C}/QC
 mkdir forward_reads
 cp sequencing_run/*/sample_*_R1.fastq forward_reads/
 ```
+</details>
 
-### Exercise 2.10: Error Recovery
+<details> <summary> Exercise 2.10: Error Recovery</summary>
 
 ```bash
 # 1. Problem: copying file to itself does nothing or causes error
@@ -175,8 +184,8 @@ cp important_data_backup.txt important_data.txt
 # 5. Multiple backups with timestamps
 cp important_data.txt important_data_$(date +%Y%m%d_%H%M%S).txt
 ```
-
-### Exercise 2.11: Efficient Organization (Challenge)
+</details>
+<details> <summary> Exercise 2.11: Efficient Organization (Challenge)</summary>
 
 ```bash
 # Complete solution
@@ -190,8 +199,9 @@ touch 01_qc.sh 02_align.sh 03_count.sh
 
 cd ../..
 ```
+</details>
 
-### Exercise 2.12: Common Mistakes - Solutions
+<details> <summary> Exercise 2.12: Common Mistakes - Solutions</summary>
 
 ```bash
 # Mistake 1: Better naming
@@ -213,13 +223,13 @@ mkdir my_project_folder
 # Mistake 5: Add -r for directories
 cp -r directory1 directory2
 ```
+</details>
 
 ---
 
 ## Common Patterns and Tips
 
-### Pattern 1: Safe File Operations
-
+<details> <summary> Pattern 1: Safe File Operations</summary>
 ```bash
 # Always check before acting
 ls *.tmp                  # See what matches
@@ -229,8 +239,8 @@ rm *.tmp                  # Then delete
 rm -i important_file.txt
 mv -i source dest
 ```
-
-### Pattern 2: Efficient Directory Creation
+</details>
+<details> <summary> Pattern 2: Efficient Directory Creation</summary>
 
 ```bash
 # Use -p for nested directories
@@ -239,8 +249,8 @@ mkdir -p project/{data,scripts,results}
 # Brace expansion for multiple items
 mkdir sample_{A,B,C,D,E}
 ```
-
-### Pattern 3: Batch Renaming
+</details>
+<details> <summary> Pattern 3: Batch Renaming</summary>
 
 ```bash
 # Add prefix
@@ -253,8 +263,8 @@ for file in *.txt; do
     mv "$file" "${file%.txt}.tsv"
 done
 ```
-
-### Pattern 4: Backup Strategy
+</details>
+<details> <summary> Pattern 4: Backup Strategy</summary>
 
 ```bash
 # Simple backup
@@ -266,12 +276,13 @@ cp file.txt file_$(date +%Y%m%d).txt
 # Directory backup
 cp -r project project_backup_$(date +%Y%m%d)
 ```
+</details>
 
 ---
 
 ## Troubleshooting Common Issues
 
-### Issue: Permission Denied
+<details> <summary> Issue: Permission Denied</summary>
 
 ```bash
 # Problem
@@ -281,8 +292,8 @@ mkdir /restricted/directory
 mkdir ~/my_directory  # Use your home directory
 # Or if you need that location, ask administrator
 ```
-
-### Issue: File Exists
+</details>
+<details> <summary> Issue: File Exists</summary>
 
 ```bash
 # Problem
@@ -291,8 +302,8 @@ cp file.txt file.txt  # Error!
 # Solution
 cp file.txt file_copy.txt  # Different name
 ```
-
-### Issue: Directory Not Empty
+</details>
+<details> <summary> Issue: Directory Not Empty</summary>
 
 ```bash
 # Problem
@@ -301,8 +312,8 @@ rmdir directory  # Fails if not empty
 # Solution
 rm -r directory  # Remove recursively
 ```
-
-### Issue: Spaces in Filenames
+</details>
+<details> <summary> Issue: Spaces in Filenames</summary>
 
 ```bash
 # Problem
@@ -313,16 +324,22 @@ touch "my file.txt"      # Use quotes
 touch my\ file.txt       # Escape space
 touch my_file.txt        # Better: use underscore
 ```
+</details>
 
 ---
 
 ## Key Takeaways
 
 ✓ **Always check before deleting** - Use `ls` first
+
 ✓ **Use Tab completion** - Saves time and prevents typos
+
 ✓ **Name files sensibly** - No spaces, use descriptive names
+
 ✓ **Organize early** - Create good structure from the start
+
 ✓ **Make backups** - Before major operations
+
 ✓ **Use wildcards carefully** - Test with `ls` first
 
 ---
