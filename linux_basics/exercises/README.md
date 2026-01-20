@@ -25,12 +25,6 @@ Hands-on practice exercises to reinforce your Linux command line skills. Work th
 - Working with real bioinformatics data
 - **Time estimate:** 3-4 hours total
 
-### Advanced Exercises
-- Multi-step workflows
-- Automation and scripting
-- Performance optimization
-- **Time estimate:** 4-6 hours total
-
 ## Getting Started
 
 ### Setup Practice Environment
