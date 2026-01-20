@@ -37,7 +37,7 @@ This creates ~50MB of practice data including:
 
 ## 📊 Dataset Descriptions
 
-### FASTA Files (`fasta/`)
+<details><summary> FASTA Files (`fasta/`)</summary>
 
 **human_genes.fasta** (50 human genes)
 - Sequences from 100-5000 bp
@@ -53,8 +53,8 @@ This creates ~50MB of practice data including:
 - 10 chromosomes
 - 1000 bp each
 - Good for quick tests
-
-### FASTQ Files (`fastq/`)
+</details>
+<details><summary> FASTQ Files (`fastq/`)</summary>
 
 **sample1_R1.fastq.gz** and **sample1_R2.fastq.gz**
 - Paired-end reads
@@ -73,8 +73,8 @@ This creates ~50MB of practice data including:
 - Single-end reads
 - 5,000 reads
 - Variable read lengths (50-200 bp)
-
-### VCF Files (`vcf/`)
+</details>
+<details><summary> VCF Files (`vcf/`)</summary>
 
 **variants.vcf**
 - 1,000 variants
@@ -88,8 +88,8 @@ This creates ~50MB of practice data including:
 - Subset of variants.vcf
 - Only PASS variants
 - QUAL > 30
-
-### GTF Files (`gtf/`)
+</details>
+<details><summary> GTF Files (`gtf/`)</summary>
 
 **annotations.gtf**
 - 100 genes
@@ -102,8 +102,8 @@ This creates ~50MB of practice data including:
 - 20 genes
 - Simplified annotations
 - Good for quick tests
-
-### Expression Data (`expression/`)
+</details>
+<details><summary> Expression Data (`expression/`)</summary>
 
 **counts.tsv**
 - 500 genes × 12 samples
@@ -119,8 +119,8 @@ This creates ~50MB of practice data including:
 - Sample information
 - Condition, replicate, batch
 - QC metrics
-
-### Metadata (`metadata/`)
+</details>
+<details><summary> Metadata (`metadata/`)</summary>
 
 **samples.csv**
 - Sample IDs
@@ -132,8 +132,8 @@ This creates ~50MB of practice data including:
 - Experiment metadata
 - Dates, protocols
 - QC flags
-
-### Log Files (`logs/`)
+</details>
+<details><summary> Log Files (`logs/`)</summary>
 
 **analysis.log**
 - Typical analysis pipeline output
@@ -145,10 +145,11 @@ This creates ~50MB of practice data including:
 - Quality control results
 - Read counts
 - Quality metrics
+</details>
 
 ## 📖 Usage Examples
 
-### Basic Operations
+<details><summary> Basic Operations</summary>
 
 ```bash
 # Count sequences in FASTA
@@ -165,8 +166,8 @@ head fasta/human_genes.fasta
 zhead fastq/sample1_R1.fastq.gz | head
 head vcf/variants.vcf
 ```
-
-### Searching Operations
+</details>
+<details><summary> Searching Operations</summary>
 
 ```bash
 # Find specific gene in FASTA
@@ -181,8 +182,8 @@ awk '$6>40' vcf/variants.vcf
 # Extract gene names from GTF
 grep "gene_name" gtf/annotations.gtf | grep -o 'gene_name "[^"]*"' | cut -d'"' -f2
 ```
-
-### Text Processing
+</details>
+<details><summary> Text Processing</summary>
 
 ```bash
 # Calculate GC content of FASTA sequences
@@ -199,8 +200,8 @@ sort -k2,2nr expression/normalized.tsv | head -10
 # Analyze sample metadata
 cut -d',' -f4 metadata/samples.csv | tail -n +2 | sort | uniq -c
 ```
-
-### Pipelines
+</details>
+<details><summary> Pipelines</summary>
 
 ```bash
 # Quality filter FASTQ reads
@@ -217,6 +218,7 @@ grep "reads processed" logs/analysis.log | \
   awk '{print $2, $4}' | \
   sort -k2,2nr
 ```
+</details> 
 
 ## 🎓 Practice Exercises
 
@@ -315,7 +317,7 @@ To add new sample datasets:
 
 - See `../exercises/` for practice exercises using this data
 - See `../docs/` for tutorials on processing these file types
-- See `../exercises/solutions/` for example analyses
+- See `../solutions/` for example analyses
 
 ## 🐛 Troubleshooting
 
