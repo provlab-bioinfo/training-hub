@@ -6,7 +6,7 @@ Complete solutions for all intermediate exercises. These build on beginner skill
 
 ## Exercise 1: Pipes and Redirects Solutions
 
-### Exercise 1.1: Simple Pipes
+<details><summary> Exercise 1.1: Simple Pipes</summary>
 
 ```bash
 # 1. List files and count
@@ -28,7 +28,9 @@ head -5 genes.txt
 
 **Note:** Direct commands are often more efficient than unnecessary pipes, but pipes are useful for complex operations.
 
-### Exercise 1.3: Counting Unique Items
+> **💡 Tip:** Direct commands like `wc -l < genes.txt` are more efficient than unnecessary pipes!
+</details>
+<details><summary> Exercise 1.2: Counting Unique Items</summary>
 
 ```bash
 # Build incrementally:
@@ -48,8 +50,8 @@ sort genes.txt | uniq -c
 # 5. Sort by frequency (most common first)
 sort genes.txt | uniq -c | sort -rn
 ```
-
-### Exercise 1.4: FASTA File Analysis
+</details>
+<details><summary> Exercise 1.3: FASTA File Analysis</summary>
 
 ```bash
 # 1. Count sequences
@@ -64,8 +66,8 @@ grep "kinase" sequences.fasta
 # 4. Count total nucleotides
 grep -v ">" sequences.fasta | tr -d '\n' | wc -c
 ```
-
-### Exercise 2.1: Simple Text Report
+</details>
+<details><summary> Exercise 1.4: Simple Text Report</summary>
 
 ```bash
 # Complete report generation
@@ -79,8 +81,8 @@ echo "" >> report.txt
 echo "Most common genes:" >> report.txt
 sort genes.txt | uniq -c | sort -rn | head -3 >> report.txt
 ```
-
-### Exercise 2.2: Log File Analysis Report
+</details>
+<details><summary> Exercise 1.5: Log File Analysis Report</summary>
 
 ```bash
 # Complete log analysis
@@ -97,8 +99,8 @@ echo "" >> error_report.txt
 echo "Warning details:" >> error_report.txt
 grep WARNING analysis.log >> error_report.txt
 ```
-
-### Exercise 5.1: Sample Processing
+</details>
+<details><summary> Exercise 1.6: Sample Processing</summary>
 
 ```bash
 # Extract tumor samples
@@ -119,8 +121,8 @@ echo "Normal samples: $(wc -l < normal_samples.txt)"
     echo "Normal samples: $(wc -l < normal_samples.txt)"
 } > sample_summary.txt
 ```
-
-### Exercise 5.2: Quality Filter
+</details>
+<details><summary> Exercise 1.7: Quality Filter</summary>
 
 ```bash
 # Extract high-quality variants
@@ -149,12 +151,13 @@ cut -f1 high_quality.txt | sort | uniq -c
     echo "  INDELs: $(grep -c INDEL high_quality.txt)"
 } > variant_qc.txt
 ```
+</details>
 
 ---
 
 ## Exercise 2: Text Processing Solutions
 
-### Exercise 1.1: Basic Column Extraction
+<details><summary> Exercise 2.1: Basic Column Extraction</summary>
 
 ```bash
 # 1. Gene names (column 1)
@@ -169,8 +172,8 @@ cut -f1,3 expression.tsv
 # 4. Columns 2-5 (all samples)
 cut -f2-5 expression.tsv
 ```
-
-### Exercise 1.4: Combining cut with Pipes
+</details>
+<details><summary> Exercise 2.2: Combining cut with Pipes</summary>
 
 ```bash
 # 1. Extract and sort gene names
@@ -185,8 +188,8 @@ grep tumor samples.csv | cut -d',' -f1
 # 4. Count unique chromosomes
 cut -f1 variants.tsv | sort -u | wc -l
 ```
-
-### Exercise 2.1: Basic Sorting
+</details>
+<details><summary> Exercise 2.3: Basic Sorting</summary>
 
 ```bash
 # 1. Sort by gene name
@@ -201,8 +204,8 @@ sort -t',' -k2,2n samples.csv
 # 4. Reverse sort by age
 sort -t',' -k2,2nr samples.csv
 ```
-
-### Exercise 2.2: Multi-Column Sorting
+</details>
+<details><summary> Exercise 2.4: Multi-Column Sorting</summary>
 
 ```bash
 # 1. Sort by chromosome, then position
@@ -214,8 +217,8 @@ sort -t',' -k4,4 -k2,2n samples.csv
 # 3. Sort by Sample1 descending
 sort -k2,2nr expression.tsv
 ```
-
-### Exercise 3.2: Count Frequencies
+</details>
+<details><summary> Exercise 2.5: Count Frequencies</summary>
 
 ```bash
 # 1. Variants per chromosome
@@ -230,8 +233,8 @@ cut -f6 variants.tsv | sort | uniq -c
 # 4. Most common consequence
 cut -f9 variants.tsv | sort | uniq -c | sort -rn | head -1
 ```
-
-### Exercise 4.1: Case Conversion
+</details>
+<details><summary> Exercise 2.6: Case Conversion</summary>
 
 ```bash
 # 1. Uppercase gene names
@@ -243,8 +246,8 @@ cut -f1 expression.tsv | tr 'A-Z' 'a-z'
 # 3. Uppercase sequences
 grep -v ">" sequences.txt | tr 'a-z' 'A-Z'
 ```
-
-### Exercise 4.2: Character Deletion
+</details>
+<details><summary> Exercise 2.7: Character Deletion</summary>
 
 ```bash
 # 1. Remove all spaces
@@ -259,8 +262,8 @@ tr -d '"' < annotations.gtf
 # 4. Keep only ATCG
 grep -v ">" sequences.txt | tr -d '\n' | tr -cd 'ATCG'
 ```
-
-### Exercise 5.2: Filtering with awk
+</details>
+<details><summary> Exercise 2.8: Filtering with awk</summary>
 
 ```bash
 # 1. Genes with Sample1 > 100
@@ -275,8 +278,8 @@ awk -F',' '$4=="tumor"' samples.csv
 # 4. SNPs only
 awk '$6=="SNP"' variants.tsv
 ```
-
-### Exercise 5.3: Calculations with awk
+</details>
+<details><summary> Exercise 2.9: Calculations with awk</summary>
 
 ```bash
 # 1. Average of Sample1 column
@@ -291,8 +294,8 @@ awk 'NR>1 {avg=($2+$3+$4+$5)/4; print $1, avg}' expression.tsv
 # 4. Count rows meeting condition
 awk 'NR>1 && $2>100 {count++} END {print count}' expression.tsv
 ```
-
-### Exercise 5.5: Complex awk Operations
+</details>
+<details><summary> Exercise 2.10: Complex awk Operations</summary>
 
 ```bash
 # Calculate sequence lengths
@@ -310,8 +313,8 @@ END {
     print id, length(seq)
 }' sequences.txt
 ```
-
-### Exercise 5.6: awk with Multiple Conditions
+</details>
+<details><summary> Exercise 2.11: awk with Multiple Conditions</summary>
 
 ```bash
 # 1. chr1 variants with quality > 0.7
@@ -325,8 +328,8 @@ awk '$6=="SNP" && $7=="PASS" {pass++}
      $6=="SNP" && $7!="PASS" {fail++} 
      END {print "Pass:", pass, "Fail:", fail}' variants.tsv
 ```
-
-### Exercise 6.1: Basic Find and Replace
+</details>
+<details><summary> Exercise 2.12: Basic Find and Replace</summary>
 
 ```bash
 # 1. Replace tumor with cancer
@@ -339,8 +342,8 @@ sed 's/,/\t/g' samples.csv
 sed 's/tumor/cancer/' samples.csv      # First only
 sed 's/tumor/cancer/g' samples.csv     # All occurrences
 ```
-
-### Exercise 6.2: Line-Specific Operations
+</details>
+<details><summary> Exercise 2.13: Line-Specific Operations</summary>
 
 ```bash
 # 1. Print line 5
@@ -355,8 +358,8 @@ sed '1d' expression.tsv
 # 4. Delete last line
 sed '$d' expression.tsv
 ```
-
-### Exercise 6.3: Pattern-Based Operations
+</details>
+<details><summary> Exercise 2.14: Pattern-Based Operations</summary>
 
 ```bash
 # 1. Delete lines with LOW_QUAL
@@ -371,8 +374,8 @@ sed '/^#/d' file.txt
 # 4. Keep only PASS lines
 sed '/PASS/!d' variants.tsv
 ```
-
-### Exercise 7.1: Complete Analysis Pipeline
+</details>
+<details><summary> Exercise 2.15: Complete Analysis Pipeline</summary>
 
 ```bash
 # Get top 3 expressed genes
@@ -381,8 +384,8 @@ cut -f1,2 expression.tsv | \
   sort -k2,2nr | \
   head -3
 ```
-
-### Exercise 7.2: Data Cleaning Pipeline
+</details>
+<details><summary> Exercise 2.16: Data Cleaning Pipeline</summary>
 
 ```bash
 # Clean messy_data.txt
@@ -390,8 +393,8 @@ cat messy_data.txt | \
   tr -s ' ' '\t' | \
   sort -k1,1 > cleaned_data.tsv
 ```
-
-### Exercise 7.3: Variant Analysis Pipeline
+</details>
+<details><summary> Exercise 2.17: Variant Analysis Pipeline</summary>
 
 ```bash
 # High-quality missense variants by gene
@@ -400,8 +403,8 @@ awk '$5>0.7 && $9=="missense" {print $8}' variants.tsv | \
   uniq -c | \
   sort -rn
 ```
-
-### Challenge 8.1: Create Summary Table
+</details>
+<details><summary> Exercise 2.18: Create Summary Table</summary>
 
 ```bash
 # Calculate min, max, average for each gene
@@ -418,12 +421,13 @@ awk 'NR>1 {
     printf "%-10s %8.2f %8.2f %8.2f\n", $1, min, max, avg
 }' expression.tsv
 ```
+</details>
 
 ---
 
 ## Exercise 3: Compression Solutions
 
-### Exercise 1.1: Compressing Files
+<details><summary> Exercise 3.1: Compressing Files</summary>
 
 ```bash
 # 1. Compress data1.txt
@@ -439,8 +443,8 @@ ls -lh data1.txt.gz
 # 4. Compress multiple files, keeping originals
 gzip -k data2.txt sample*.txt
 ```
-
-### Exercise 1.2: Compression Levels
+</details>
+<details><summary> Exercise 3.2: Compression Levels</summary>
 
 ```bash
 # Create test copies
@@ -461,8 +465,8 @@ ls -lh test*.gz
 # -6: Balanced
 # -9: Slowest, smallest file
 ```
-
-### Exercise 2.1: Viewing Compressed Files
+</details>
+<details><summary> Exercise 3.3: Viewing Compressed Files</summary>
 
 ```bash
 # Compress first
@@ -480,8 +484,8 @@ zcat reads.fastq.gz | tail -10
 # 4. Browse interactively
 zless reads.fastq.gz
 ```
-
-### Exercise 2.2: Searching in Compressed Files
+</details>
+<details><summary> Exercise 3.4: Searching in Compressed Files</summary>
 
 ```bash
 # 1. Search for read ID
@@ -496,8 +500,8 @@ zgrep "ATCG" *.gz
 # 4. Extract with context
 zgrep -A 3 "@read1" reads.fastq.gz
 ```
-
-### Exercise 3.1: Creating Archives
+</details>
+<details><summary> Exercise 3.5: Creating Archives</summary>
 
 ```bash
 # 1. Create tar archive
@@ -512,8 +516,8 @@ tar -czvf project1_verbose.tar.gz project1/
 # 4. Archive multiple directories
 tar -czf projects.tar.gz project1/ project2/
 ```
-
-### Exercise 3.2: Listing Archive Contents
+</details>
+<details><summary> Exercise 3.6: Listing Archive Contents</summary>
 
 ```bash
 # 1. List contents
@@ -525,8 +529,8 @@ tar -tzvf project1.tar.gz
 # 3. Search for specific files
 tar -tzf project1.tar.gz | grep "scripts"
 ```
-
-### Exercise 3.3: Extracting Archives
+</details>
+<details><summary> Exercise 3.7: Extracting Archives</summary>
 
 ```bash
 # 1. Extract entire archive
@@ -541,8 +545,8 @@ tar -xzf project1.tar.gz project1/scripts/analyze.sh
 # 4. Extract with verbose
 tar -xzvf project1.tar.gz
 ```
-
-### Exercise 4.1: Archiving Analysis Results
+</details>
+<details><summary> Exercise 3.8: Archiving Analysis Results</summary>
 
 ```bash
 # Create dated archive excluding large files
@@ -557,8 +561,8 @@ tar -tzf analysis_results_*.tar.gz | head
 # Check size
 ls -lh analysis_results_*.tar.gz
 ```
-
-### Exercise 4.2: Compressing Sequencing Data
+</details>
+<details><summary> Exercise 3.9: Compressing Sequencing Data</summary>
 
 ```bash
 # Compress all FASTQ files
@@ -580,8 +584,8 @@ done
     ls -lh *.fastq.gz
 } > compression_report.txt
 ```
-
-### Exercise 5.1: Working with Streaming Data
+</details>
+<details><summary> Exercise 3.10: Working with Streaming Data</summary>
 
 ```bash
 # Generate and compress
@@ -596,12 +600,13 @@ zcat input.fastq.gz | \
 # Extract subset
 zcat reads.fastq.gz | head -40 | gzip > sample_reads.fastq.gz
 ```
+</details>
 
 ---
 
 ## Exercise 4: Sequence Files Solutions
 
-### Exercise 4.1: Basic FASTA Statistics
+<details><summary> Exercise 4.1: Basic FASTA Statistics</summary>
 
 ```bash
 # 1. Count sequences
@@ -621,8 +626,8 @@ grep -c "kinase" sequences.fasta
 # 5. Unique gene names
 grep ">" sequences.fasta | cut -d' ' -f1 | sort -u | wc -l
 ```
-
-### Exercise 4.4: Sequence Length Analysis
+</details>
+<details><summary> Exercise 4.2: Sequence Length Analysis</summary>
 
 ```bash
 # Calculate length of each sequence
@@ -669,8 +674,8 @@ END {
     print count
 }' sequences.fasta
 ```
-
-### Exercise 4.6: Format Conversion
+</details>
+<details><summary> Exercise 4.3: Format Conversion</summary>
 
 ```bash
 # Multi-line to single-line FASTA
@@ -686,8 +691,8 @@ END {
     printf("\n")
 }' sequences.fasta > single_line.fasta
 ```
-
-### Exercise 4.7: GC Content Calculation
+</details>
+<details><summary> Exercise 4.4: GC Content Calculation</summary>
 
 ```bash
 # Calculate GC content for each sequence
@@ -711,8 +716,8 @@ END {
     printf "%s\t%.2f%%\n", id, (gc/total)*100
 }' sequences.fasta
 ```
-
-### Exercise 4.11: Basic FASTQ Statistics
+</details>
+<details><summary> Exercise 4.5: Basic FASTQ Statistics</summary>
 
 ```bash
 # 1. Count reads
@@ -732,8 +737,8 @@ awk 'NR%4==1' reads.fastq | sort | uniq -d
 # 4. Total bases
 awk 'NR%4==2 {sum+=length($0)} END {print sum}' reads.fastq
 ```
-
-### Exercise 4.12: Read Length Distribution
+</details>
+<details><summary> Exercise 4.6: Read Length Distribution</summary>
 
 ```bash
 # 1. Extract all lengths
@@ -757,8 +762,8 @@ awk 'NR%4==2 {sum+=length($0); count++}
 # 4. Length distribution
 awk 'NR%4==2 {print length}' reads.fastq | sort -n | uniq -c
 ```
-
-### Exercise 4.14: FASTQ to FASTA Conversion
+</details>
+<details><summary> Exercise 4.7: FASTQ to FASTA Conversion</summary>
 
 ```bash
 # Basic conversion
@@ -775,8 +780,8 @@ awk 'NR%4==1 {header=substr($0,2)}
      NR%4==2 {print ">"header" length:"length($0); print}' \
      reads.fastq > annotated_reads.fasta
 ```
-
-### Exercise 4.16: Filtering Reads by Quality
+</details>
+<details><summary> Exercise 4.8: Filtering Reads by Quality</summary>
 
 ```bash
 # Remove reads with N bases
@@ -799,12 +804,13 @@ awk 'NR%4==1 {header=$0}
          }
      }' reads.fastq > high_quality.fastq
 ```
+</details>
 
 ---
 
 ## Common Patterns and Tips
 
-### Pattern 1: Incremental Pipeline Building
+<details><summary> Pattern 1: Incremental Pipeline Building</summary>
 
 ```bash
 # Always build step by step
@@ -813,8 +819,8 @@ cat file.txt | command1         # Step 2
 cat file.txt | command1 | cmd2  # Step 3
 # etc.
 ```
-
-### Pattern 2: Using tee for Debugging
+</details>
+<details><summary> Pattern 2: Using tee for Debugging</summary>
 
 ```bash
 # Save intermediate results
@@ -824,8 +830,8 @@ cat data | \
   tee step2.txt | \
   process2 > final.txt
 ```
-
-### Pattern 3: FASTA Processing Template
+</details>
+<details><summary> Pattern 3: FASTA Processing Template</summary>
 
 ```bash
 # Standard FASTA awk template
@@ -845,8 +851,8 @@ END {
     print id, length(seq)
 }' sequences.fasta
 ```
-
-### Pattern 4: FASTQ Processing Template
+</details>
+<details><summary> Pattern 4: FASTQ Processing Template</summary>
 
 ```bash
 # Standard FASTQ awk template
@@ -860,26 +866,20 @@ awk 'NR%4==1 {header=$0}
          }
      }' reads.fastq
 ```
+</details>
 
 ---
 
 ## Key Takeaways
 
-✅ **Build pipelines incrementally** - Test each step
-
-✅ **Use appropriate tools** - cut for simple, awk for complex
-
-✅ **Always sort before uniq** - uniq only works on adjacent lines
-
-✅ **Work with compressed data** - Save time and space
-
-✅ **Use awk for calculations** - More powerful than cut/grep
-
-✅ **Test on small data first** - Before running on full datasets
-
-✅ **Save intermediate results** - When debugging complex pipelines
-
-✅ **Document complex commands** - Future you will thank you
+- ✅ **Build pipelines incrementally** - Test each step
+- ✅ **Use appropriate tools** - cut for simple, awk for complex
+- ✅ **Always sort before uniq** - uniq only works on adjacent lines
+- ✅ **Work with compressed data** - Save time and space
+- ✅ **Use awk for calculations** - More powerful than cut/grep
+- ✅ **Test on small data first** - Before running on full datasets
+- ✅ **Save intermediate results** - When debugging complex pipelines
+- ✅ **Document complex commands** - Future you will thank you
 
 ---
 
