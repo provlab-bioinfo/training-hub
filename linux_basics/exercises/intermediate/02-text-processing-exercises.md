@@ -99,7 +99,7 @@ EOF
 
 ## Part 1: The cut Command
 
-### Exercise 1.1: Basic Column Extraction
+<details><summary> Exercise 1.1: Basic Column Extraction</summary>
 
 **Tasks:**
 1. Extract just gene names from expression.tsv (column 1)
@@ -114,8 +114,9 @@ cut -f2 expression.tsv
 cut -f1,3 expression.tsv
 cut -f2-5 expression.tsv
 ```
+</details>
 
-### Exercise 1.2: Working with Different Delimiters
+<details><summary> Exercise 1.2: Working with Different Delimiters</summary>
 
 **Tasks:**
 1. Extract SampleID from samples.csv (comma-separated)
@@ -128,8 +129,8 @@ cut -d',' -f1 samples.csv
 cut -d',' -f2,4 samples.csv
 cut -d',' -f1,2,4,5 samples.csv
 ```
-
-### Exercise 1.3: Character-Based Cutting
+</details>
+<details><summary> Exercise 1.3: Character-Based Cutting</summary>
 
 **Tasks:**
 1. Extract first 10 characters from each line in sequences.txt
@@ -142,8 +143,8 @@ cut -c1-10 sequences.txt
 cut -c5-15 sequences.txt
 cut -c1-4 variants.tsv
 ```
-
-### Exercise 1.4: Combining cut with Pipes
+</details>
+<details><summary> Exercise 1.4: Combining cut with Pipes</summary>
 
 **Tasks:**
 1. Extract gene names and sort them
@@ -158,10 +159,11 @@ cut -f2 expression.tsv | tail -n +2 | sort -n
 grep tumor samples.csv | cut -d',' -f1
 cut -f1 variants.tsv | sort -u | wc -l
 ```
+</details>
 
 ## Part 2: The sort Command
 
-### Exercise 2.1: Basic Sorting
+<details><summary> Exercise 2.1: Basic Sorting</summary>
 
 **Tasks:**
 1. Sort expression.tsv by gene name (alphabetically)
@@ -176,8 +178,8 @@ sort -k2,2n variants.tsv
 sort -t',' -k2,2n samples.csv
 sort -t',' -k2,2nr samples.csv
 ```
-
-### Exercise 2.2: Multi-Column Sorting
+</details>
+<details><summary> Exercise 2.2: Multi-Column Sorting</summary>
 
 **Tasks:**
 1. Sort variants by chromosome, then by position
@@ -190,8 +192,8 @@ sort -k1,1 -k2,2n variants.tsv
 sort -t',' -k4,4 -k2,2n samples.csv
 sort -k2,2nr expression.tsv
 ```
-
-### Exercise 2.3: Human-Readable Sorting
+</details>
+<details><summary> Exercise 2.3: Human-Readable Sorting</summary>
 
 **Tasks:**
 1. Create a file size list and sort
@@ -202,8 +204,8 @@ sort -k2,2nr expression.tsv
 ls -lh > sizes.txt
 sort -k5,5h sizes.txt
 ```
-
-### Exercise 2.4: Unique Sorting
+</details>
+<details><summary> Exercise 2.4: Unique Sorting</summary>
 
 **Tasks:**
 1. Get unique gene names from expression.tsv
@@ -216,10 +218,11 @@ cut -f1 expression.tsv | sort -u
 cut -f1 variants.tsv | sort -u
 cut -d',' -f4 samples.csv | sort -u
 ```
+</details>
 
 ## Part 3: The uniq Command
 
-### Exercise 3.1: Finding Duplicates
+<details><summary> Exercise 3.1: Finding Duplicates</summary>
 
 **Tasks:**
 1. Create a test file with duplicates:
@@ -246,8 +249,8 @@ sort test_duplicates.txt | uniq -c
 sort test_duplicates.txt | uniq -d
 sort test_duplicates.txt | uniq -u
 ```
-
-### Exercise 3.2: Count Frequencies
+</details>
+<details><summary> Exercise 3.2: Count Frequencies</summary>
 
 **Tasks:**
 1. Count how many variants per chromosome
@@ -262,8 +265,9 @@ cut -d',' -f4 samples.csv | tail -n +2 | sort | uniq -c
 cut -f6 variants.tsv | tail -n +1 | sort | uniq -c
 cut -f9 variants.tsv | tail -n +1 | sort | uniq -c | sort -rn
 ```
+</details>
 
-### Exercise 3.3: Identifying Unique vs Repeated
+<details><summary> Exercise 3.3: Identifying Unique vs Repeated</summary>
 
 **Tasks:**
 1. Find genes that appear only once in annotations.gtf
@@ -274,10 +278,11 @@ cut -f9 variants.tsv | tail -n +1 | sort | uniq -c | sort -rn
 ```bash
 grep -o 'gene_name "[^"]*"' annotations.gtf | cut -d'"' -f2 | sort | uniq -c
 ```
+</details>
 
 ## Part 4: The tr Command
 
-### Exercise 4.1: Case Conversion
+<details><summary> Exercise 4.1: Case Conversion</summary>
 
 **Tasks:**
 1. Convert all gene names to uppercase
@@ -290,8 +295,9 @@ cut -f1 expression.tsv | tr 'a-z' 'A-Z'
 cut -f1 expression.tsv | tr 'A-Z' 'a-z'
 grep -v ">" sequences.txt | tr 'a-z' 'A-Z'
 ```
+</details>
 
-### Exercise 4.2: Character Deletion
+<details><summary> Exercise 4.2: Character Deletion</summary>
 
 **Tasks:**
 1. Remove all spaces from messy_data.txt
@@ -306,8 +312,9 @@ grep -v ">" sequences.txt | tr -d '\n'
 tr -d '"' < annotations.gtf
 grep -v ">" sequences.txt | tr -d '\n' | tr -cd 'ATCG'
 ```
+</details>
 
-### Exercise 4.3: Character Replacement
+<details><summary> Exercise 4.3: Character Replacement</summary>
 
 **Tasks:**
 1. Replace spaces with tabs in messy_data.txt
@@ -320,8 +327,9 @@ tr ' ' '\t' < messy_data.txt
 tr ',' '\t' < samples.csv
 tr ':' '_' < sequences.txt
 ```
+</details>
 
-### Exercise 4.4: Squeeze Repeated Characters
+<details><summary> Exercise 4.4: Squeeze Repeated Characters</summary>
 
 **Tasks:**
 1. Squeeze multiple spaces to single space
@@ -332,10 +340,11 @@ tr ':' '_' < sequences.txt
 tr -s ' ' < messy_data.txt
 tr -s '\n' < file_with_blank_lines.txt
 ```
+</details>
 
 ## Part 5: The awk Command
 
-### Exercise 5.1: Print Specific Columns
+<details><summary> Exercise 5.1: Print Specific Columns</summary>
 
 **Tasks:**
 1. Print gene names from expression.tsv
@@ -350,8 +359,9 @@ awk '{print $1, $2}' expression.tsv
 awk '{print $1 "\t" $2}' expression.tsv
 awk '{print $NF}' expression.tsv
 ```
+</details>
 
-### Exercise 5.2: Filtering with awk
+<details><summary> Exercise 5.2: Filtering with awk</summary>
 
 **Tasks:**
 1. Print genes with Sample1 > 100
@@ -366,8 +376,9 @@ awk '$5 > 0.8' variants.tsv
 awk -F',' '$4=="tumor"' samples.csv
 awk '$6=="SNP"' variants.tsv
 ```
+</details>
 
-### Exercise 5.3: Calculations with awk
+<details><summary> Exercise 5.3: Calculations with awk</summary>
 
 **Tasks:**
 1. Calculate average of Sample1 column
@@ -382,8 +393,9 @@ awk '{sum+=$3} END {print sum}' expression.tsv
 awk '{print $1, ($2+$3+$4+$5)/4}' expression.tsv
 awk '$2 > 100 {count++} END {print count}' expression.tsv
 ```
+</details>
 
-### Exercise 5.4: Pattern Matching
+<details><summary> Exercise 5.4: Pattern Matching</summary>
 
 **Tasks:**
 1. Print lines containing "BRCA"
@@ -398,8 +410,9 @@ awk '$1 ~ /BRCA/' expression.tsv
 awk '$1 !~ /BRCA/' expression.tsv
 awk 'tolower($0) ~ /brca/' expression.tsv
 ```
+</details>
 
-### Exercise 5.5: Complex awk Operations
+<details><summary> Exercise 5.5: Complex awk Operations</summary>
 
 **Task:** Calculate length of each sequence in sequences.txt
 
@@ -417,8 +430,9 @@ END {
     print id, length(seq)
 }' sequences.txt
 ```
+</details>
 
-### Exercise 5.6: awk with Multiple Conditions
+<details><summary> Exercise 5.6: awk with Multiple Conditions</summary>
 
 **Tasks:**
 1. Find variants on chr1 with quality > 0.7
@@ -431,8 +445,9 @@ awk '$1=="chr1" && $5>0.7' variants.tsv
 awk -F',' '$2>50 && $4=="tumor"' samples.csv
 awk '$6=="SNP" && $7=="PASS" {pass++} $6=="SNP" && $7!="PASS" {fail++} END {print "Pass:", pass, "Fail:", fail}' variants.tsv
 ```
+</details>
 
-### Exercise 5.7: Formatted Output
+<details><summary> Exercise 5.7: Formatted Output</summary>
 
 **Tasks:**
 1. Print gene and expression with formatting
@@ -444,10 +459,11 @@ awk '$6=="SNP" && $7=="PASS" {pass++} $6=="SNP" && $7!="PASS" {fail++} END {prin
 awk '{printf "%-10s %8.2f\n", $1, $2}' expression.tsv
 awk 'BEGIN {print "Gene\tExpression"} {printf "%-10s %8.2f\n", $1, $2}' expression.tsv
 ```
+</details>
 
 ## Part 6: The sed Command
 
-### Exercise 6.1: Basic Find and Replace
+<details><summary> Exercise 6.1: Basic Find and Replace</summary>
 
 **Tasks:**
 1. Replace "tumor" with "cancer" in samples.csv
@@ -461,8 +477,9 @@ sed 's/,/\t/g' samples.csv
 sed 's/tumor/cancer/' samples.csv    # First only
 sed 's/tumor/cancer/g' samples.csv   # All
 ```
+</details>
 
-### Exercise 6.2: Line-Specific Operations
+<details><summary> Exercise 6.2: Line-Specific Operations</summary>
 
 **Tasks:**
 1. Print line 5 of expression.tsv
@@ -477,8 +494,9 @@ sed -n '3,7p' expression.tsv
 sed '1d' expression.tsv
 sed '$d' expression.tsv
 ```
+</details>
 
-### Exercise 6.3: Pattern-Based Operations
+<details><summary> Exercise 6.3: Pattern-Based Operations</summary>
 
 **Tasks:**
 1. Delete lines containing "LOW_QUAL"
@@ -493,8 +511,9 @@ sed '/^$/d' file.txt
 sed '/^#/d' file.txt
 sed '/PASS/!d' variants.tsv
 ```
+</details>
 
-### Exercise 6.4: In-Place Editing
+<details><summary> Exercise 6.4: In-Place Editing</summary>
 
 **Tasks:**
 1. Replace text and save to new file
@@ -507,8 +526,9 @@ sed 's/tumor/cancer/g' samples.csv > samples_new.csv
 sed -i 's/tumor/cancer/g' samples.csv
 sed -i.bak 's/tumor/cancer/g' samples.csv
 ```
+</details>
 
-### Exercise 6.5: Advanced Substitutions
+<details><summary> Exercise 6.5: Advanced Substitutions</summary>
 
 **Tasks:**
 1. Remove "chr" prefix from chromosomes
@@ -522,10 +542,11 @@ sed 's/^chr//' variants.tsv
 sed 's/^/chr/' chromosomes.txt
 sed 's/.*gene_name "\([^"]*\)".*/\1/' annotations.gtf
 ```
+</details>
 
 ## Part 7: Combining Tools
 
-### Exercise 7.1: Complete Analysis Pipeline
+<details><summary> Exercise 7.1: Complete Analysis Pipeline</summary>
 
 **Task:** Analyze expression data comprehensively.
 
@@ -537,8 +558,9 @@ cut -f1,2 expression.tsv | \
   sort -k2,2nr | \
   head -3
 ```
+</details>
 
-### Exercise 7.2: Data Cleaning Pipeline
+<details><summary> Exercise 7.2: Data Cleaning Pipeline</summary>
 
 **Task:** Clean messy_data.txt
 
@@ -549,8 +571,9 @@ cat messy_data.txt | \
   tr -s ' ' '\t' | \
   sort -k1,1 > cleaned_data.tsv
 ```
+</details>
 
-### Exercise 7.3: Variant Analysis Pipeline
+<details><summary> Exercise 7.3: Variant Analysis Pipeline</summary>
 
 **Task:** Extract and analyze high-quality variants.
 
@@ -562,8 +585,8 @@ awk '$5>0.7 && $9=="missense" {print $8}' variants.tsv | \
   uniq -c | \
   sort -rn
 ```
-
-### Exercise 7.4: GTF Processing
+</details>
+<details><summary> Exercise 7.4: GTF Processing</summary>
 
 **Task:** Extract gene information from GTF.
 
@@ -574,8 +597,8 @@ awk '$3=="gene" {print $1, $4, $5}' annotations.gtf | \
   sed 's/gene_name "\([^"]*\)".*/\1/' | \
   sort -k1,1 -k2,2n
 ```
-
-### Exercise 7.5: Log File Analysis
+</details>
+<details><summary> Exercise 7.5: Log File Analysis</summary>
 
 **Task:** Comprehensive log analysis.
 
@@ -589,10 +612,11 @@ grep ERROR analysis.log | \
 grep "reads" analysis.log | \
   awk '{sum+=$NF} END {print "Total reads:", sum}'
 ```
+</details>
 
 ## Challenge Exercises
 
-### Challenge 8.1: Create Summary Table
+<details><summary> Challenge 8.1: Create Summary Table</summary>
 
 **Task:** Create a summary table of expression data.
 
@@ -604,8 +628,8 @@ BRCA1   34.1    89.3    59.1
 ```
 
 **Hint:** Use awk to calculate min, max, average for each row.
-
-### Challenge 8.2: Variant Classification
+</details>
+<details><summary> Challenge 8.2: Variant Classification</summary>
 
 **Task:** Classify variants by multiple criteria.
 
@@ -615,8 +639,8 @@ BRCA1   34.1    89.3    59.1
 3. Group by consequence type
 4. Count each category
 5. Generate formatted report
-
-### Challenge 8.3: Sample Matching
+</details>
+<details><summary> Challenge 8.3: Sample Matching</summary>
 
 **Task:** Cross-reference sample metadata with analysis results.
 
@@ -625,8 +649,8 @@ BRCA1   34.1    89.3    59.1
 2. Match with metadata
 3. Identify missing samples
 4. Generate match report
-
-### Challenge 8.4: Format Converter
+</details>
+<details><summary> Challenge 8.4: Format Converter</summary>
 
 **Task:** Convert between file formats.
 
@@ -637,8 +661,8 @@ BRCA1   34.1    89.3    59.1
 - Sample count
 
 **Build the pipeline!**
-
-### Challenge 8.5: Data Validation
+</details>
+<details><summary> Challenge 8.5: Data Validation</summary>
 
 **Task:** Validate data files for common issues.
 
@@ -648,6 +672,7 @@ BRCA1   34.1    89.3    59.1
 3. Valid values in categorical columns
 4. No missing data
 5. Generate validation report
+</details>
 
 ## Reflection Questions
 
@@ -660,14 +685,14 @@ BRCA1   34.1    89.3    59.1
 
 ## Best Practices Learned
 
-✓ **Use cut for simple column extraction**
-✓ **Use awk for complex operations**
-✓ **Always sort before uniq**
-✓ **Test sed patterns before in-place editing**
-✓ **Build pipelines incrementally**
-✓ **Preserve original data**
-✓ **Document complex awk scripts**
-✓ **Use appropriate tool for the job**
+- [x] **Use cut for simple column extraction**
+- [x] **Use awk for complex operations**
+- [x] **Always sort before uniq**
+- [x] **Test sed patterns before in-place editing**
+- [x] **Build pipelines incrementally**
+- [x] **Preserve original data**
+- [x] **Document complex awk scripts**
+- [x] **Use appropriate tool for the job**
 
 ## Quick Reference
 
@@ -713,7 +738,7 @@ Ready for compression? Move to:
 
 **Estimated time:** 90-120 minutes
 
-**Key skills practiced:**
+## **Key skills practiced:**
 - Column extraction with cut
 - Sorting and deduplication
 - Text transformation with tr
