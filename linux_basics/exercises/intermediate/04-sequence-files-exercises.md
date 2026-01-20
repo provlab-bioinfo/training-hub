@@ -133,7 +133,7 @@ EOF
 
 ## Part 1: FASTA File Operations
 
-### Exercise 4.1: Basic FASTA Statistics
+<details><summary>Exercise 4.1: Basic FASTA Statistics</summary>
 
 **Tasks:**
 1. Count total sequences in sequences.fasta
@@ -149,8 +149,8 @@ wc -l sequences.fasta
 grep "kinase" sequences.fasta | wc -l
 grep ">" sequences.fasta | cut -d' ' -f1 | sort -u | wc -l
 ```
-
-### Exercise 4.2: Extracting Sequence IDs
+</details>
+<details><summary>Exercise 4.2: Extracting Sequence IDs</summary>
 
 **Tasks:**
 1. Extract all sequence IDs (just the ID, not descriptions)
@@ -164,8 +164,8 @@ grep ">" sequences.fasta
 grep ">" sequences.fasta | cut -d' ' -f1
 grep ">" sequences.fasta | cut -d' ' -f1 | sed 's/>//'
 ```
-
-### Exercise 4.3: Extracting Specific Sequences
+</details>
+<details><summary>Exercise 4.3: Extracting Specific Sequences</summary>
 
 **Tasks:**
 1. Extract gene1 and its sequence
@@ -181,8 +181,8 @@ awk '/^>gene1/ {p=1} /^>/ && !/^>gene1/ {p=0} p' sequences.fasta
 # Extract with description match
 awk '/kinase/ {p=1} /^>/ && !/kinase/ {p=0} p' sequences.fasta
 ```
-
-### Exercise 4.4: Sequence Length Analysis
+</details>
+<details><summary>Exercise 4.4: Sequence Length Analysis</summary>
 
 **Task:** Calculate the length of each sequence.
 
@@ -206,8 +206,8 @@ END {
 2. Find the shortest sequence
 3. Calculate average sequence length
 4. Count sequences longer than 50bp
-
-### Exercise 4.5: Duplicate Detection
+</details>
+<details><summary>Exercise 4.5: Duplicate Detection</summary>
 
 **Tasks:**
 1. Find duplicate sequence IDs
@@ -223,8 +223,8 @@ grep ">" sequences.fasta | sort | uniq -d
 # Find duplicate sequences (extract sequences, sort, find duplicates)
 grep -v ">" sequences.fasta | tr -d '\n' | fold -w 50 | sort | uniq -d
 ```
-
-### Exercise 4.6: Format Conversion - Multi-line to Single-line
+</details>
+<details><summary>Exercise 4.6: Format Conversion - Multi-line to Single-line</summary>
 
 **Task:** Convert multi-line FASTA to single-line format.
 
@@ -238,8 +238,8 @@ awk '/^>/ {if (NR>1) printf("\n"); printf("%s\n",$0); next}
 ```
 
 **Verify:** Each sequence should be on one line.
-
-### Exercise 4.7: GC Content Calculation
+</details>
+<details><summary>Exercise 4.7: GC Content Calculation</summary>
 
 **Task:** Calculate GC content for each sequence.
 
@@ -268,8 +268,8 @@ END {
 1. Find sequences with GC content > 50%
 2. Calculate average GC content across all sequences
 3. Plot GC content distribution (conceptually)
-
-### Exercise 4.8: Finding Sequence Motifs
+</details>
+<details><summary>Exercise 4.8: Finding Sequence Motifs</summary>
 
 **Tasks:**
 1. Find sequences containing "ATCG" motif
@@ -287,8 +287,8 @@ awk '/^>/ {header=$0} !/^>/ {seq=seq $0}
 # Simpler with grep (but searches across lines)
 grep -B 1 "ATCG" sequences.fasta
 ```
-
-### Exercise 4.9: Sequence Statistics Report
+</details>
+<details><summary>Exercise 4.9: Sequence Statistics Report</summary>
 
 **Task:** Create a comprehensive FASTA report.
 
@@ -302,8 +302,8 @@ grep -B 1 "ATCG" sequences.fasta
 7. Number of sequences with description "kinase"
 
 **Build it step by step, then combine into one script!**
-
-### Exercise 4.10: Filtering Sequences by Length
+</details>
+<details><summary>Exercise 4.10: Filtering Sequences by Length</summary>
 
 **Tasks:**
 1. Extract sequences longer than 50bp
@@ -331,10 +331,11 @@ END {
     }
 }' sequences.fasta
 ```
+</details>
 
 ## Part 2: FASTQ File Operations
 
-### Exercise 4.11: Basic FASTQ Statistics
+<details><summary>Exercise 4.11: Basic FASTQ Statistics</summary>
 
 **Tasks:**
 1. Count total reads in reads.fastq
@@ -353,8 +354,8 @@ awk 'NR%4==1' reads.fastq
 # Count total bases
 awk 'NR%4==2 {sum+=length($0)} END {print sum}' reads.fastq
 ```
-
-### Exercise 4.12: Read Length Distribution
+</details>
+<details><summary>Exercise 4.12: Read Length Distribution</summary>
 
 **Tasks:**
 1. Extract all read lengths
@@ -374,8 +375,8 @@ awk 'NR%4==2 {print length}' reads.fastq | sort -n | uniq -c
 # Average length
 awk 'NR%4==2 {sum+=length($0); count++} END {print sum/count}' reads.fastq
 ```
-
-### Exercise 4.13: Quality Score Analysis
+</details>
+<details><summary>Exercise 4.13: Quality Score Analysis</summary>
 
 **Tasks:**
 1. Extract all quality strings
@@ -394,8 +395,8 @@ awk 'NR%4==0 && /!/' reads.fastq
 # Count reads with N's in sequence
 awk 'NR%4==2 && /N/ {count++} END {print count}' reads.fastq
 ```
-
-### Exercise 4.14: FASTQ to FASTA Conversion
+</details>
+<details><summary>Exercise 4.14: FASTQ to FASTA Conversion</summary>
 
 **Task:** Convert FASTQ to FASTA format.
 
@@ -410,8 +411,8 @@ awk 'NR%4==1 {print ">"substr($0,2)} NR%4==2' reads.fastq > reads.fasta
 1. Convert only reads longer than 20bp
 2. Convert and rename sequences (seq1, seq2, etc.)
 3. Add read length to FASTA headers
-
-### Exercise 4.15: Extracting Read Subsets
+</details>
+<details><summary>Exercise 4.15: Extracting Read Subsets</summary>
 
 **Tasks:**
 1. Extract first 5 reads
@@ -431,8 +432,8 @@ tail -12 reads.fastq
 # Extract specific reads
 awk 'NR>=9 && NR<=12' reads.fastq  # Read 3 (lines 9-12)
 ```
-
-### Exercise 4.16: Filtering Reads by Quality
+</details>
+<details><summary>Exercise 4.16: Filtering Reads by Quality</summary>
 
 **Tasks:**
 1. Remove reads containing 'N' bases
@@ -447,8 +448,8 @@ awk 'NR%4==1 {header=$0}
      NR%4==3 {plus=$0}
      NR%4==0 {qual=$0; if (seq !~ /N/) {print header; print seq; print plus; print qual}}' reads.fastq
 ```
-
-### Exercise 4.17: Paired-End Read Analysis
+</details>
+<details><summary>Exercise 4.17: Paired-End Read Analysis</summary>
 
 **Tasks:**
 1. Verify that R1 and R2 have same number of reads
@@ -466,8 +467,8 @@ awk 'NR%4==1' sample1_R1.fastq > r1_ids.txt
 awk 'NR%4==1' sample1_R2.fastq > r2_ids.txt
 diff r1_ids.txt r2_ids.txt
 ```
-
-### Exercise 4.18: Detecting Contamination
+</details>
+<details><summary>Exercise 4.18: Detecting Contamination</summary>
 
 **Task:** Check for adapter contamination or PhiX.
 
@@ -488,8 +489,8 @@ grep -c "AGATCGGAAGAGC" read_sequences.txt
 # Check for PhiX
 grep -c "GCTAGCTAGCTAGCTA" read_sequences.txt
 ```
-
-### Exercise 4.19: Read Trimming Simulation
+</details>
+<details><summary>Exercise 4.19: Read Trimming Simulation</summary>
 
 **Task:** Simulate quality trimming by removing low-quality ends.
 
@@ -505,8 +506,8 @@ awk 'NR%4==1 {print $0}
      NR%4==3 {print $0}
      NR%4==0 {print substr($0,1,20)}' reads.fastq > trimmed.fastq
 ```
-
-### Exercise 4.20: FASTQ Statistics Summary
+</details>
+<details><summary>Exercise 4.20: FASTQ Statistics Summary</summary>
 
 **Task:** Create comprehensive FASTQ QC report.
 
@@ -521,10 +522,11 @@ awk 'NR%4==1 {print $0}
 8. Read length distribution
 
 **Build incrementally!**
+</details>
 
 ## Part 3: Advanced Sequence Operations
 
-### Exercise 4.21: Reverse Complement
+<details><summary>Exercise 4.21: Reverse Complement</summary>
 
 **Task:** Generate reverse complement of sequences.
 
@@ -550,8 +552,8 @@ awk '/^>/ {print; next}
          print toupper(rev)
      }' sequences.fasta
 ```
-
-### Exercise 4.22: Merging Paired-End Reads
+</details>
+<details><summary>Exercise 4.22: Merging Paired-End Reads</summary>
 
 **Task:** Conceptually merge R1 and R2 reads (just concatenate for practice).
 
@@ -566,8 +568,8 @@ awk '/^>/ {print; next}
 awk 'NR%4==1 {print ">"substr($0,2)"/1"} NR%4==2' sample1_R1.fastq > merged.fasta
 awk 'NR%4==1 {print ">"substr($0,2)"/2"} NR%4==2' sample1_R2.fastq >> merged.fasta
 ```
-
-### Exercise 4.23: Deduplication
+</details>
+<details><summary>Exercise 4.23: Deduplication</summary>
 
 **Tasks:**
 1. Find duplicate reads (same sequence)
@@ -583,8 +585,8 @@ awk 'NR%4==2' reads.fastq | sort | uniq -d
 # Count unique sequences
 awk 'NR%4==2' reads.fastq | sort -u | wc -l
 ```
-
-### Exercise 4.24: Sequence Comparison
+</details>
+<details><summary>Exercise 4.24: Sequence Comparison</summary>
 
 **Tasks:**
 1. Compare sequences.fasta and genes_single_line.fasta
@@ -604,8 +606,8 @@ comm -12 seq1.txt seq2.txt
 # Find unique to first file
 comm -23 seq1.txt seq2.txt
 ```
-
-### Exercise 4.25: Batch Processing Multiple Files
+</details>
+<details><summary>Exercise 4.25: Batch Processing Multiple Files</summary>
 
 **Scenario:** You have multiple FASTQ files to process.
 
@@ -629,10 +631,11 @@ for file in *.fastq; do
     echo "  Reads: $reads"
 done
 ```
+</details>
 
 ## Challenge Exercises
 
-### Challenge 4.26: Complete QC Pipeline
+<details><summary>Challenge 4.26: Complete QC Pipeline</summary>
 
 **Task:** Create a comprehensive quality control script.
 
@@ -655,8 +658,8 @@ echo "" >> qc_report.txt
 
 # Add your analysis here
 ```
-
-### Challenge 4.27: Multi-Sample Analysis
+</details>
+<details><summary>Challenge 4.27: Multi-Sample Analysis</summary>
 
 **Task:** Compare multiple samples and create summary.
 
@@ -666,8 +669,8 @@ echo "" >> qc_report.txt
 3. Compare quality distributions
 4. Identify outliers
 5. Generate comparison table
-
-### Challenge 4.28: Format Validator
+</details>
+<details><summary>Challenge 4.28: Format Validator</summary>
 
 **Task:** Create a script that validates FASTA/FASTQ format.
 
@@ -677,6 +680,7 @@ echo "" >> qc_report.txt
 3. Matching lengths (FASTQ seq and qual)
 4. No duplicate IDs
 5. Proper line structure
+</details>
 
 ## Reflection Questions
 
@@ -690,14 +694,14 @@ echo "" >> qc_report.txt
 
 ## Best Practices Learned
 
-✓ **Validate format** before processing
-✓ **Check read/sequence counts** match expectations
-✓ **Monitor quality scores** for issues
-✓ **Track paired-end relationships** carefully
-✓ **Use appropriate tools** (awk for FASTQ, grep for FASTA)
-✓ **Keep original data** - work on copies
-✓ **Document processing steps** in logs
-✓ **Test on small subsets** before full dataset
+- [x] **Validate format** before processing
+- [x] **Check read/sequence counts** match expectations
+- [x] **Monitor quality scores** for issues
+- [x] **Track paired-end relationships** carefully
+- [x] **Use appropriate tools** (awk for FASTQ, grep for FASTA)
+- [x] **Keep original data** - work on copies
+- [x] **Document processing steps** in logs
+- [x] **Test on small subsets** before full dataset
 
 ## Next Steps
 
@@ -708,7 +712,7 @@ Ready for advanced workflows? Move to:
 
 **Estimated time:** 90-120 minutes
 
-**Key skills practiced:**
+## **Key skills practiced:**
 - FASTA file manipulation
 - FASTQ quality assessment
 - Format conversion
