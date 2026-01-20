@@ -59,8 +59,6 @@ A comprehensive guide for biologists learning to use the command line on Linux s
 ## 📖 Additional Resources
 
 - [Exercises](exercises/) - Hands-on practice problems with solutions
-- [Troubleshooting Guide](docs/troubleshooting.md) - Common issues and fixes
-- [Server-Specific Information](docs/server-info.md) - Details about our Red Hat setup
 
 ---
 
