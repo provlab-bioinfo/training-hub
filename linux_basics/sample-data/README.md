@@ -242,11 +242,6 @@ Use this data to practice exercises from the tutorials:
    - Quality assessment
    - Format conversions
 
-5. **Advanced (Workflows):**
-   - Multi-file processing
-   - Quality control pipelines
-   - Report generation
-
 ## 📊 Dataset Statistics
 
 After running setup.sh:
