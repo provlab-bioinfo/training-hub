@@ -2,7 +2,7 @@
 
 Master finding text within files (grep) and locating files themselves (find). These are essential skills for bioinformatics work.
 
-## Setup
+<details><summary>Setup</summary>
 
 Create comprehensive practice data:
 
@@ -118,6 +118,7 @@ cat > scripts/analyze.py << 'EOF'
 print("Running analysis...")
 EOF
 ```
+</details>
 
 ## Part 1: grep - Searching Inside Files
 
@@ -637,7 +638,7 @@ Congratulations on completing the beginner exercises! You're now ready for:
 
 **Estimated time:** 60-90 minutes
 
-**Key skills practiced:**
+## **Key skills practiced:**
 - Using grep to search within files
 - Using find to locate files
 - Case-sensitive vs insensitive search
