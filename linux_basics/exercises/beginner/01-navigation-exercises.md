@@ -256,15 +256,15 @@ cd $(dirname /path/to/file)
 
 ## Tips for Efficient Navigation
 
-1. **Use Tab Completion**: Press Tab to auto-complete directory names
-2. **Use History**: Press Up arrow to cycle through previous commands
-3. **Create Aliases**: Add to `~/.bashrc`:
+- [x] **Use Tab Completion**: Press Tab to auto-complete directory names
+- [x] **Use History**: Press Up arrow to cycle through previous commands
+- [x] **Create Aliases**: Add to `~/.bashrc`:
    ```bash
    alias proj1='cd ~/practice_nav/project1'
    alias proj2='cd ~/practice_nav/project2'
    ```
-4. **Use `pushd` and `popd`**: Build a directory stack for complex navigation
-5. **Set CDPATH**: Add frequently used parent directories to CDPATH:
+- [x] **Use `pushd` and `popd`**: Build a directory stack for complex navigation
+- [x] **Set CDPATH**: Add frequently used parent directories to CDPATH:
    ```bash
    export CDPATH=.:~:~/practice_nav
    ```
