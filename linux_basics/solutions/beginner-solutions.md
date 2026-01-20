@@ -1,4 +1,4 @@
-</details># Beginner Exercise Solutions
+# Beginner Exercise Solutions
 
 Complete solutions for all beginner exercises. Try solving on your own first!
 
@@ -6,7 +6,7 @@ Complete solutions for all beginner exercises. Try solving on your own first!
 
 ## Exercise 1: Navigation Solutions
 
-### Exercise 1.1: Finding Your Way
+<details><summary> Exercise 1.1: Finding Your Way</summary>
 
 ```bash
 # 1. Print current directory
@@ -26,8 +26,8 @@ pwd
 # 5. Go back to practice_nav
 cd ..
 ```
-
-### Exercise 1.2: Relative and Absolute Paths
+</details>
+<details><summary> Exercise 1.2: Relative and Absolute Paths</summary>
 
 ```bash
 # 1. Navigate to project1/data (relative)
@@ -46,8 +46,9 @@ cd ~
 # Or just
 cd
 ```
+</details>
 
-### Exercise 1.4: Quick Navigation
+<details><summary> Exercise 1.3: Quick Navigation</summary>
 
 ```bash
 # 1. Navigate to project1/scripts
@@ -65,8 +66,8 @@ cd ../..
 # 5. Jump directly to project2/raw_data
 cd ~/practice_nav/project2/raw_data
 ```
-
-### Exercise 1.7: Real-World Scenario
+</details>
+<details><summary> Exercise 1.4: Real-World Scenario</summary>
 
 ```bash
 # Starting from project1/results:
@@ -83,12 +84,13 @@ mkdir figures
 # 4. Navigate to project2/analysis
 cd ../../project2/analysis
 ```
+</details>
 
 ---
 
 ## Exercise 2: File Operations Solutions
 
-### Exercise 2.1: Creating Files and Directories
+<details><summary> Exercise 2.1: Creating Files and Directories</summary>
 
 ```bash
 # 1. Create directory
@@ -106,8 +108,8 @@ touch experiment1/data/raw/reads.fastq
 # 5. Verify
 ls -R
 ```
-
-### Exercise 2.6: Creating Project Structure
+</details>
+<details><summary> Exercise 2.2: Creating Project Structure</summary>
 
 ```bash
 # All in one command using brace expansion
@@ -116,8 +118,8 @@ mkdir -p rna_seq_project/{raw_data/{fastq,quality_reports},processed_data/{trimm
 # Verify
 ls -R rna_seq_project/
 ```
-
-### Exercise 2.7: Organizing Files
+</details>
+<details><summary> Exercise 2.3: Organizing Files</summary>
 
 ```bash
 # Setup already done in exercise
@@ -140,8 +142,8 @@ mv messy_dir/*.sh messy_dir/scripts/
 # 6. Verify
 ls -R messy_dir/
 ```
-
-### Exercise 2.8: Batch Operations
+</details>
+<details><summary> Exercise 2.4: Batch Operations</summary>
 
 ```bash
 # 1. Create files with brace expansion
@@ -159,8 +161,8 @@ done
 mkdir backup_samples
 cp -r sample_* backup_samples/
 ```
-
-### Exercise 2.9: Real-World Scenario
+</details>
+<details><summary> Exercise 2.5: Real-World Scenario</summary>
 
 ```bash
 # 1. Create structure
@@ -181,12 +183,13 @@ mkdir sequencing_run/sample_{A,B,C}/QC
 mkdir forward_reads
 cp sequencing_run/*/sample_*_R1.fastq forward_reads/
 ```
+</details>
 
 ---
 
 ## Exercise 3: Viewing Files Solutions
 
-### Exercise 3.1: Basic File Viewing with cat
+<details><summary> Exercise 3.1: Basic File Viewing with cat</summary>
 
 ```bash
 # 1. View gene_list.txt
@@ -202,8 +205,8 @@ cat expression_data.tsv
 cat large_file.txt
 # Fills screen! Use less instead for large files
 ```
-
-### Exercise 3.3: Viewing File Beginnings with head
+</details>
+<details><summary> Exercise 3.2: Viewing File Beginnings with head</summary>
 
 ```bash
 # 1. First 10 lines
@@ -223,8 +226,8 @@ head -n 20 large_file.txt
 # 5. Check header
 head -1 expression_data.tsv
 ```
-
-### Exercise 3.4: FASTA File Inspection
+</details>
+<details><summary> Exercise 3.3: FASTA File Inspection</summary>
 
 ```bash
 # 1. View first sequence (need header + sequence lines)
@@ -238,8 +241,8 @@ head -10 sequences.fasta
 # 4. Just headers
 grep ">" sequences.fasta
 ```
-
-### Exercise 3.5: Viewing File Endings with tail
+</details>
+<details><summary> Exercise 3.4: Viewing File Endings with tail</summary>
 
 ```bash
 # 1. Last 10 lines
@@ -257,8 +260,8 @@ tail -1 analysis.log
 # 5. Last entry in expression data
 tail -1 expression_data.tsv
 ```
-
-### Exercise 3.10: FASTA File Analysis
+</details>
+<details><summary> Exercise 3.5: FASTA File Analysis</summary>
 
 ```bash
 # 1. Count sequences (count headers starting with >)
@@ -275,8 +278,8 @@ echo "$total_lines / $num_sequences" | bc
 # 4. Count total nucleotides
 grep -v ">" sequences.fasta | tr -d '\n' | wc -c
 ```
-
-### Exercise 3.11: Log File Analysis
+</details>
+<details><summary> Exercise 3.6: Log File Analysis</summary>
 
 ```bash
 # 1. When analysis started
@@ -294,8 +297,8 @@ grep "Processing sample" analysis.log | wc -l
 # 5. Did QC pass?
 grep "Quality control" analysis.log
 ```
-
-### Exercise 3.14: Working with Compressed Files
+</details>
+<details><summary> Exercise 3.7: Working with Compressed Files</summary>
 
 ```bash
 # 1. Compress
@@ -314,8 +317,8 @@ zgrep -c ">" sequences.fasta.gz
 zless sequences.fasta.gz
 # Press q to quit
 ```
-
-### Exercise 3.15: FASTQ Quality Check
+</details>
+<details><summary> Exercise 3.8: FASTQ Quality Check</summary>
 
 ```bash
 # 1. View first read (4 lines)
@@ -333,12 +336,13 @@ awk 'NR%4==0' sample.fastq | head -1
 # 5. First and last 2 reads
 (head -8; tail -8) < sample.fastq
 ```
+</details>
 
 ---
 
 ## Exercise 4: Searching Solutions
 
-### Exercise 4.1: Basic grep
+<details><summary> Exercise 4.1: Basic grep</summary>
 
 ```bash
 # 1. Search for BRCA1
@@ -353,8 +357,8 @@ grep "chr1" annotations.txt
 # 4. Search for kinase
 grep "kinase" annotations.txt
 ```
-
-### Exercise 4.2: Case-Insensitive Search
+</details>
+<details><summary> Exercise 4.2: Case-Insensitive Search</summary>
 
 ```bash
 # 1. Search lowercase brca1 (no matches)
@@ -369,8 +373,8 @@ grep -i "TUMOR" annotations.txt
 # 4. Search Chr
 grep -i "Chr" annotations.txt
 ```
-
-### Exercise 4.3: Counting Matches
+</details>
+<details><summary> Exercise 4.3: Counting Matches</summary>
 
 ```bash
 # 1. Count genes on chr1
@@ -385,8 +389,8 @@ grep -c "kinase" annotations.txt
 # 4. Count total genes
 wc -l annotations.txt
 ```
-
-### Exercise 4.5: Inverting Matches
+</details>
+<details><summary> Exercise 4.4: Inverting Matches</summary>
 
 ```bash
 # 1. Lines without chr1
@@ -401,8 +405,8 @@ grep -v "PASS" variants.txt
 # 4. Log entries not INFO
 grep -v "INFO" analysis.log
 ```
-
-### Exercise 4.9: FASTA File Searching
+</details>
+<details><summary> Exercise 4.5: FASTA File Searching</summary>
 
 ```bash
 # 1. Count sequences
@@ -420,8 +424,8 @@ grep "gene3" sequences.fasta
 # 5. Header and sequence
 grep -A 1 "gene3" sequences.fasta
 ```
-
-### Exercise 4.10: Log File Analysis
+</details>
+<details><summary> Exercise 4.6: Log File Analysis</summary>
 
 ```bash
 # 1. Find all errors
@@ -439,8 +443,8 @@ grep "sample005" analysis.log
 # 5. Only INFO messages
 grep "INFO" analysis.log
 ```
-
-### Exercise 4.11: Variant Analysis
+</details>
+<details><summary> Exercise 4.7: Variant Analysis</summary>
 
 ```bash
 # 1. Find SNPs
@@ -463,8 +467,8 @@ grep "chr1" variants.txt | wc -l
 grep "chr2" variants.txt | wc -l
 # etc.
 ```
-
-### Exercise 4.13: Finding by Name
+</details>
+<details><summary> Exercise 4.8: Finding by Name</summary>
 
 ```bash
 # 1. Find all .fastq files
@@ -482,8 +486,8 @@ find . -name "sample001*"
 # 5. Find align.sh
 find . -name "align.sh"
 ```
-
-### Exercise 4.15: Finding by Type
+</details>
+<details><summary> Exercise 4.9: Finding by Type</summary>
 
 ```bash
 # 1. Only directories in data/
@@ -498,8 +502,8 @@ find . -type d | wc -l
 # 4. Count files
 find . -type f | wc -l
 ```
-
-### Exercise 4.18: Finding and Executing
+</details>
+<details><summary> Exercise 4.10: Finding and Executing</summary>
 
 ```bash
 # 1. Make scripts executable
@@ -515,8 +519,8 @@ find . -name "*.fastq" -exec ls -lh {} \;
 mkdir backup
 find data/results -name "*.txt" -exec cp {} backup/ \;
 ```
-
-### Exercise 4.20: Combining grep and find
+</details>
+<details><summary> Exercise 4.11: Combining grep and find</summary>
 
 ```bash
 # 1. Find .txt files containing ERROR
@@ -531,8 +535,8 @@ find data/ -type f -exec grep -l "sample001" {} \;
 # 4. Search for BRCA1 in multiple formats
 grep "BRCA1" *.txt *.fasta 2>/dev/null
 ```
-
-### Exercise 4.24: Search Detective
+</details>
+<details><summary> Exercise 4.12: Search Detective</summary>
 
 ```bash
 # 1. Tumor samples count
@@ -560,12 +564,13 @@ find . -type f -exec grep -l "sample002" {} \;
 find scripts/ -type f | wc -l
 ls scripts/*.sh scripts/*.py 2>/dev/null | wc -l
 ```
+</details>
 
 ---
 
 ## Common Patterns and Best Practices
 
-### Pattern 1: Safe File Operations
+<details><summary> Pattern 1: Safe File Operations</summary>
 
 ```bash
 # Always check before acting
@@ -577,8 +582,8 @@ rm -i important_file.txt
 mv -i source dest
 cp -i file1 file2
 ```
-
-### Pattern 2: Efficient Navigation
+</details>
+<details><summary> Pattern 2: Efficient Navigation</summary>
 
 ```bash
 # Use cd - to toggle between directories
@@ -592,8 +597,8 @@ pushd ~/data
 pushd ~/scripts
 popd                      # Returns to previous
 ```
-
-### Pattern 3: Quick File Checks
+</details>
+<details><summary> Pattern 3: Quick File Checks</summary>
 
 ```bash
 # Check file before processing
@@ -602,8 +607,8 @@ head -5 data.txt          # Quick preview
 wc -l data.txt           # Count records
 ls -lh data.txt          # Check size
 ```
-
-### Pattern 4: Searching Efficiently
+</details>
+<details><summary> Pattern 4: Searching Efficiently</summary>
 
 ```bash
 # Build grep searches incrementally
@@ -615,8 +620,8 @@ grep -i "pattern" file.txt | sort | uniq
 # Combine find and grep
 find . -name "*.txt" -exec grep -l "pattern" {} \;
 ```
-
-### Pattern 5: Working with Sequences
+</details>
+<details><summary> Pattern 5: Working with Sequences</summary>
 
 ```bash
 # FASTA quick checks
@@ -629,12 +634,13 @@ echo $(wc -l < reads.fastq)/4 | bc            # Count reads
 head -4 reads.fastq                           # First read
 awk 'NR%4==2' reads.fastq | head | wc -c     # Check read length
 ```
+</details>
 
 ---
 
 ## Troubleshooting Common Issues
 
-### Issue 1: Permission Denied
+<details><summary> Issue 1: Permission Denied</summary>
 
 ```bash
 # Problem
@@ -647,8 +653,8 @@ rm protected_file.txt
 ls -l protected_file.txt
 chmod u+w protected_file.txt  # Add write permission
 ```
-
-### Issue 2: File Not Found
+</details>
+<details><summary> Issue 2: File Not Found</summary>
 
 ```bash
 # Problem
@@ -660,8 +666,8 @@ pwd                      # Confirm location
 ls                       # See what files exist
 find . -name "myfile.txt"  # Search for file
 ```
-
-### Issue 3: Command Not Found
+</details>
+<details><summary> Issue 3: Command Not Found</summary>
 
 ```bash
 # Problem
@@ -673,8 +679,8 @@ which fastqc            # Check if installed
 module avail            # Check available modules
 module load fastqc      # Load module if available
 ```
-
-### Issue 4: Spaces in Filenames
+</details>
+<details><summary> Issue 4: Spaces in Filenames</summary>
 
 ```bash
 # Problem
@@ -685,8 +691,8 @@ touch "my file.txt"     # Use quotes
 touch my\ file.txt      # Escape space
 touch my_file.txt       # Better: use underscore
 ```
-
-### Issue 5: Wildcard Surprises
+</details>
+<details><summary> Issue 5: Wildcard Surprises</summary>
 
 ```bash
 # Problem
@@ -696,6 +702,7 @@ rm *.txt               # Deletes ALL .txt files!
 ls *.txt               # Check what matches FIRST
 rm -i *.txt            # Use interactive mode
 ```
+</details>
 
 ---
 
