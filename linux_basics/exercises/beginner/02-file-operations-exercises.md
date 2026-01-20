@@ -330,17 +330,12 @@ touch my_file.txt        # Better: use underscore
 
 ## Key Takeaways
 
-✓ **Always check before deleting** - Use `ls` first
-
-✓ **Use Tab completion** - Saves time and prevents typos
-
-✓ **Name files sensibly** - No spaces, use descriptive names
-
-✓ **Organize early** - Create good structure from the start
-
-✓ **Make backups** - Before major operations
-
-✓ **Use wildcards carefully** - Test with `ls` first
+- [x] **Always check before deleting** - Use `ls` first
+- [x] **Use Tab completion** - Saves time and prevents typos
+- [x] **Name files sensibly** - No spaces, use descriptive names
+- [x] **Organize early** - Create good structure from the start
+- [x] **Make backups** - Before major operations
+- [x] **Use wildcards carefully** - Test with `ls` first
 
 ---
 
