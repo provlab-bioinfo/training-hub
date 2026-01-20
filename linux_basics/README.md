@@ -8,14 +8,13 @@ A comprehensive guide for biologists learning to use the command line on Linux s
 
 ## 🚀 Quick Start
 
-<details>
-<summary><strong>New to Linux? Start here</strong></summary>
+### New to Linux? Start here
 
 1. [Getting Started with PuTTY](docs/01-getting-started.md) - Connect to the server
 2. [Quick Reference](QUICK-START.md) - Top 20 commands you'll use daily
 3. [Command Cheatsheet](CHEATSHEET.md) - One-page reference guide
 
-</details>
+---
 
 ## 📚 Tutorial Contents
 
