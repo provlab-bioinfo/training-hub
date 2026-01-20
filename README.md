@@ -6,7 +6,6 @@ The goal of this hub is to help teammates build **practical, real-world bioinfor
 
 All materials are:
 - Modular and self-paced
-- Designed for real ProvLab workflows
 - Suitable for beginners through intermediate users
 
 ---
