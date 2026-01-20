@@ -54,64 +54,48 @@ A comprehensive guide for biologists learning to use the command line on Linux s
 
 </details>
 
-## 📖 Additional Resources
+---
 
-<details>
-<summary>Expand to see all resources</summary>
+## 📖 Additional Resources
 
 - [Exercises](exercises/) - Hands-on practice problems with solutions
 - [Troubleshooting Guide](docs/troubleshooting.md) - Common issues and fixes
 - [Server-Specific Information](docs/server-info.md) - Details about our Red Hat setup
 
-</details>
+---
 
 ## 🎯 Learning Path
 
-<details>
-<summary><strong>Absolute Beginner</strong> (Week 1)</summary>
+### Absolute Beginner</strong> (Week 1)
 
 - Complete tutorials 1-3
 - Try exercises in `exercises/beginner/`
 - Keep the cheatsheet handy
 
-</details>
-
-<details>
-<summary><strong>Comfortable with Basics</strong> (Week 2-3)</summary>
+### Comfortable with Basics</strong> (Week 2-3)
 
 - Work through tutorials 4-8
 - Practice with real data in `sample-data/`
 - Try exercises in `exercises/intermediate/`
 
-</details>
-
-<details>
-<summary><strong>Ready for Bioinformatics</strong> (Week 4+)</summary>
+### Ready for Bioinformatics</strong> (Week 4+)
 
 - Study tutorials 9-12
 - Apply skills to your research data
 - Explore advanced exercises
 
-</details>
+---
 
 ## 💡 How to Use This Guide
-
-<details>
-<summary>Click for tips on using this guide effectively</summary>
 
 1. **Read sequentially** if you're completely new to Linux
 2. **Jump to specific topics** if you need particular skills
 3. **Keep the cheatsheet open** while working
 4. **Practice regularly** - use it or lose it!
 5. **Don't memorize everything** - even experts look things up
-
-</details>
+---
 
 ## 📝 Prerequisites
-
-<details>
-<summary>What you'll need before starting</summary>
-
 - Access credentials to our Linux server
 - PuTTY installed on your Windows computer
 - Basic computer literacy
