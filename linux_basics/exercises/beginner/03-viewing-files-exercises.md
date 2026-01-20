@@ -436,7 +436,8 @@ rm large_file.txt
 gzip *.fasta *.log
 ```
 </details>
-<details><summary> Common Mistakes - Can You Identify Them?</summary>
+
+## Common Mistakes - Can You Identify Them?
 
 **Scenario 1:**
 ```bash
@@ -461,8 +462,8 @@ tail -f static_file.txt  # Nothing happens
 less file.txt.gz         # Gibberish appears
 ```
 **What command should you use?**
-</details>
-<details><summary> Reflection Questions</summary>
+
+## Reflection Questions
 
 1. What's the difference between `cat` and `less`?
 2. When would you use `head` vs `tail`?
@@ -470,23 +471,17 @@ less file.txt.gz         # Gibberish appears
 4. Why use `less` instead of opening in an editor?
 5. How do you count lines without displaying them all?
 6. What's the advantage of `zless` over `gunzip` then `less`?
-</details>
 
-<details><summary> Best Practices Learned</summary>
 
-✓ **Use `less` for large files** - Don't flood your terminal
+## Best Practices Learned
 
-✓ **Use `head` for quick checks** - See file format quickly
-
-✓ **Use `tail -f` for monitoring** - Watch jobs in real-time
-
-✓ **Use `wc -l` for counting** - Faster than viewing entire file
-
-✓ **Use z-commands for compressed files** - Save time and space
-
-✓ **Check file size first** - Before attempting to view
-
-✓ **Use appropriate tool** - Match tool to task
+- [x] **Use `less` for large files** - Don't flood your terminal
+- [x] **Use `head` for quick checks** - See file format quickly
+- [x] **Use `tail -f` for monitoring** - Watch jobs in real-time
+- [x] **Use `wc -l` for counting** - Faster than viewing entire file
+- [x] **Use z-commands for compressed files** - Save time and space
+- [x] **Check file size first** - Before attempting to view
+- [x] **Use appropriate tool** - Match tool to task
 
 </details>
 
@@ -514,7 +509,7 @@ Once comfortable with viewing files, move to:
 
 **Estimated time:** 45-60 minutes
 
-**Key skills practiced:**
+## **Key skills practiced:**
 - Choosing appropriate viewing commands
 - Using cat, head, tail, less
 - Counting with wc
