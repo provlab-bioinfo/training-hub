@@ -2,6 +2,23 @@
 
 Complete solutions for all intermediate exercises. These build on beginner skills with more complex pipelines and text processing.
 
+## How to Use This Tutorial
+
+- 🔍 **Try first, then expand solutions**  
+  Each exercise has hidden solutions. Attempt the task on your own before clicking **▶ Show solution**.
+
+- ⌨️ **Type commands yourself**  
+  Avoid copy-paste at first. Typing builds muscle memory.
+
+- 🧪 **Work in a practice directory**  
+  Do **not** run destructive commands (`rm`, `find -delete`) outside the practice folder.
+
+- 💡 **Read comments in code blocks**  
+  Lines starting with `#` explain *why* a command is used.
+
+- ❓ **Stuck?**  
+  Use `man command`, `command --help`, or ask for help.
+
 ---
 
 ## Exercise 1: Pipes and Redirects Solutions
