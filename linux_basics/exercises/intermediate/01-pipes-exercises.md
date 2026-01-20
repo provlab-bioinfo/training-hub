@@ -2,7 +2,7 @@
 
 Master combining commands for powerful data processing pipelines.
 
-## Setup
+<details><summary>Setup</summary>
 
 Create comprehensive practice data:
 
@@ -124,10 +124,11 @@ cat > scripts/qc.sh << 'EOF'
 echo "Running QC..."
 EOF
 ```
+</details>
 
 ## Part 1: Basic Pipes
 
-### Exercise 1.1: Simple Pipes
+<details><summary>Exercise 1.1: Simple Pipes</summary>
 
 **Tasks:**
 1. List files and count them
@@ -148,8 +149,8 @@ cat genes.txt | head -5
 wc -l genes.txt
 cat genes.txt | wc -l
 ```
-
-### Exercise 1.2: Output Redirection
+</details>
+<details><summary>Exercise 1.2: Output Redirection</summary>
 
 **Tasks:**
 1. Save directory listing to `file_list.txt`
@@ -166,8 +167,8 @@ echo "Log created at $(date)" > analysis_log.txt
 ```
 
 **Challenge:** What happens if you use `>` twice on the same file?
-
-### Exercise 1.3: Counting Unique Items
+</details>
+<details><summary>Exercise 1.3: Counting Unique Items</summary>
 
 **Tasks:**
 1. Sort genes.txt
@@ -186,8 +187,8 @@ cat genes.txt | sort | uniq -c | sort -rn
 ```
 
 **Question:** Why must you sort before using uniq?
-
-### Exercise 1.4: FASTA File Analysis
+</details>
+<details><summary>Exercise 1.4: FASTA File Analysis</summary>
 
 **Tasks:**
 1. Count sequences in sequences.fasta
@@ -202,8 +203,8 @@ grep ">" sequences.fasta
 grep "kinase" sequences.fasta
 grep -v ">" sequences.fasta | tr -d '\n' | wc -c
 ```
-
-### Exercise 1.5: Multi-Step Pipelines
+</details>
+<details><summary>Exercise 1.5: Multi-Step Pipelines</summary>
 
 **Tasks:**
 1. Extract chromosome names from annotations.txt, sort, count unique
@@ -218,10 +219,11 @@ awk '$1=="chr1" {print $4}' annotations.txt | sort
 cut -f1 annotations.txt | sort | uniq -c | sort -rn
 awk '$5=="+" {print}' annotations.txt | sort -k2,2n
 ```
+</details>
 
 ## Part 2: Creating Reports
 
-### Exercise 2.1: Simple Text Report
+<details><summary>Exercise 2.1: Simple Text Report</summary>
 
 **Task:** Create a summary report with multiple pieces of information.
 
@@ -236,8 +238,8 @@ echo "Total sequences: $(grep -c ">" sequences.fasta)" >> report.txt
 ```
 
 **Verify:** View report.txt and ensure formatting looks good.
-
-### Exercise 2.2: Log File Analysis Report
+</details>
+<details><summary>Exercise 2.2: Log File Analysis Report</summary>
 
 **Task:** Analyze analysis.log and create summary.
 
@@ -258,8 +260,8 @@ echo "" >> error_report.txt
 echo "Error details:" >> error_report.txt
 grep ERROR analysis.log >> error_report.txt
 ```
-
-### Exercise 2.3: Variant Statistics
+</details>
+<details><summary>Exercise 2.3: Variant Statistics</summary>
 
 **Task:** Generate variant statistics from variants.txt.
 
@@ -280,10 +282,11 @@ echo "" >> variant_stats.txt
 echo "Variants per chromosome:" >> variant_stats.txt
 cut -f1 variants.txt | sort | uniq -c | sort -rn >> variant_stats.txt
 ```
+</details>
 
 ## Part 3: Error Handling
 
-### Exercise 3.1: Redirecting Errors
+<details><summary>Exercise 3.1: Redirecting Errors</summary>
 
 **Tasks:**
 1. Run a command that produces errors
@@ -297,8 +300,8 @@ ls nonexistent_file 2> error.log
 ls data/ > output.txt 2> error.log
 ls data/ nonexistent_file &> combined.log
 ```
-
-### Exercise 3.2: Suppressing Errors
+</details>
+<details><summary>Exercise 3.2: Suppressing Errors</summary>
 
 **Task:** Sometimes you want to ignore errors.
 
@@ -309,10 +312,11 @@ find / -name "myfile.txt" 2>/dev/null
 ```
 
 **When useful:** Searching directories where you don't have permissions.
+</details>
 
 ## Part 4: Using tee
 
-### Exercise 4.1: Split Output
+<details><summary>Exercise 4.1: Split Output</summary>
 
 **Tasks:**
 1. Count genes, display AND save
@@ -326,8 +330,8 @@ cat genes.txt | sort | uniq -c | tee counts.txt | sort -rn | head -3
 ```
 
 **Question:** Why is `tee` useful for debugging?
-
-### Exercise 4.2: Multiple tee Points
+</details>
+<details><summary>Exercise 4.2: Multiple tee Points</summary>
 
 **Task:** Save results at multiple stages of a pipeline.
 
@@ -343,10 +347,11 @@ cat genes.txt | \
 ```
 
 **Verify:** Check each intermediate file.
+</details>
 
 ## Part 5: Real-World Scenarios
 
-### Exercise 5.1: Sample Processing
+<details><summary>Exercise 5.1: Sample Processing</summary>
 
 **Scenario:** Process sample_list.txt to separate tumor and normal samples.
 
@@ -363,8 +368,8 @@ grep normal sample_list.txt > normal_samples.txt
 echo "Tumor samples: $(wc -l < tumor_samples.txt)"
 echo "Normal samples: $(wc -l < normal_samples.txt)"
 ```
-
-### Exercise 5.2: Quality Filter
+</details>
+<details><summary>Exercise 5.2: Quality Filter</summary>
 
 **Scenario:** Filter variants by quality score.
 
@@ -382,8 +387,8 @@ grep -c SNP high_quality.txt
 grep -c INDEL high_quality.txt
 cut -f1 high_quality.txt | sort | uniq -c
 ```
-
-### Exercise 5.3: Gene Expression Analysis
+</details>
+<details><summary>Exercise 5.3: Gene Expression Analysis</summary>
 
 **Scenario:** Analyze expression.tsv data.
 
@@ -398,8 +403,8 @@ cut -f1 high_quality.txt | sort | uniq -c
 cut -f1 expression.tsv | tail -n +2
 awk '/BRCA1/ {print ($2+$3+$4)/3}' expression.tsv
 ```
-
-### Exercise 5.4: File Organization Audit
+</details>
+<details><summary>Exercise 5.4: File Organization Audit</summary>
 
 **Scenario:** Audit data directory.
 
@@ -418,8 +423,8 @@ echo "Results files: $(find data/results -type f | wc -l)" >> audit.txt
 echo "" >> audit.txt
 find data/raw -name "*.fastq" >> audit.txt
 ```
-
-### Exercise 5.5: Log Parsing
+</details>
+<details><summary>Exercise 5.5: Log Parsing</summary>
 
 **Scenario:** Extract useful information from analysis.log.
 
@@ -443,10 +448,11 @@ grep -C 1 ERROR analysis.log
 # Failed samples
 grep ERROR analysis.log | grep -o 'sample[0-9]*' | sort -u
 ```
+</details>
 
 ## Part 6: Advanced Pipelines
 
-### Exercise 6.1: Complex Gene Analysis
+<details><summary>Exercise 6.1: Complex Gene Analysis</summary>
 
 **Task:** Comprehensive gene analysis pipeline.
 
@@ -463,8 +469,8 @@ grep ERROR analysis.log | grep -o 'sample[0-9]*' | sort -u
 ```bash
 sort genes.txt | uniq -c | sort -rn | tee gene_frequency.txt | head -3
 ```
-
-### Exercise 6.2: Multi-File Processing
+</details>
+<details><summary>Exercise 6.2: Multi-File Processing</summary>
 
 **Task:** Process all annotation-related files.
 
@@ -480,8 +486,8 @@ echo "Genes in gene list: $(wc -l < genes.txt)" >> combined_report.txt
 echo "Genes in annotations: $(cut -f4 annotations.txt | sort -u | wc -l)" >> combined_report.txt
 echo "Common genes: $(comm -12 <(sort genes.txt | uniq) <(cut -f4 annotations.txt | sort -u) | wc -l)" >> combined_report.txt
 ```
-
-### Exercise 6.3: Data Transformation
+</details>
+<details><summary>Exercise 6.3: Data Transformation</summary>
 
 **Task:** Transform data format using pipes.
 
@@ -499,10 +505,11 @@ gene1: chr1:1000-2000 (+)
 ```bash
 awk '{printf "%s: %s:%s-%s (%s)\n", $4, $1, $2, $3, $5}' annotations.txt
 ```
+</details>
 
 ## Part 7: Debugging Pipelines
 
-### Exercise 7.1: Build Incrementally
+<details><summary>Exercise 7.1: Build Incrementally</summary>
 
 **Practice building a complex pipeline step by step:**
 
@@ -525,8 +532,8 @@ cat genes.txt | sort | uniq -c | sort -rn
 # Final
 cat genes.txt | sort | uniq -c | sort -rn | head -3
 ```
-
-### Exercise 7.2: Using tee for Debugging
+</details>
+<details><summary>Exercise 7.2: Using tee for Debugging</summary>
 
 **Task:** Debug why a pipeline isn't working.
 
@@ -549,10 +556,11 @@ cat genes.txt | \
 ```
 
 **Check each debug file to find where it breaks!**
+</details>
 
 ## Challenge Exercises
 
-### Challenge 8.1: Complete Analysis Pipeline
+<details><summary>Challenge 8.1: Complete Analysis Pipeline</summary>
 
 **Scenario:** Comprehensive variant analysis.
 
@@ -565,8 +573,8 @@ cat genes.txt | \
 6. Save all intermediate results
 
 **Build this as one comprehensive pipeline!**
-
-### Challenge 8.2: Automated QC Report
+</details>
+<details><summary>Challenge 8.2: Automated QC Report</summary>
 
 **Task:** Create automated quality control report generator.
 
@@ -587,8 +595,8 @@ echo "=== QC Report for $FILE ===" > qc_report.txt
 echo "Generated: $(date)" >> qc_report.txt
 # Add your pipeline here
 ```
-
-### Challenge 8.3: Multi-Sample Comparison
+</details>
+<details><summary>Challenge 8.3: Multi-Sample Comparison</summary>
 
 **Task:** Compare multiple samples.
 
@@ -598,6 +606,7 @@ echo "Generated: $(date)" >> qc_report.txt
 3. Compare across samples
 4. Identify outliers
 5. Generate comparison table
+</details>
 
 ## Reflection Questions
 
@@ -610,13 +619,14 @@ echo "Generated: $(date)" >> qc_report.txt
 
 ## Best Practices Learned
 
-✓ **Build incrementally** - Test each step
-✓ **Use tee for debugging** - See intermediate results
-✓ **Save important outputs** - Don't rely only on final result
-✓ **Redirect errors** - Handle them appropriately
-✓ **Document complex pipelines** - Add comments
-✓ **Test on small data first** - Before full dataset
-✓ **Use meaningful filenames** - For saved outputs
+- [x] **Build incrementally** – Test each step
+- [x] **Use tee for debugging** – See intermediate results
+- [x] **Save important outputs** – Don't rely only on final result
+- [x] **Redirect errors** – Handle them appropriately
+- [x] **Document complex pipelines** – Add comments
+- [x] **Test on small data first** – Before full dataset
+- [x] **Use meaningful filenames** – For saved outputs
+
 
 ## Quick Reference
 
@@ -640,7 +650,7 @@ Ready for text processing? Move to:
 
 **Estimated time:** 60-90 minutes
 
-**Key skills practiced:**
+## **Key skills practiced:**
 - Building command pipelines
 - Output redirection
 - Error handling
