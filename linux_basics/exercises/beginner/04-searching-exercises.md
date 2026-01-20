@@ -594,14 +594,14 @@ grep -r "pattern" --include="*.txt" .
 7. Why is grep -c useful?
 
 ## Best Practices Learned
-1. **Use quotes** around search patterns
-2. **Use -i for case-insensitive** when appropriate
-3. **Count with grep -c** instead of piping to wc
-4. **Test find before -delete** to avoid accidents
-5. **Use grep -l** to find files with matches
-6. **Combine grep and find** for powerful searches
-7. **Use -w for whole words** to avoid partial matches
-8. **Check file locations** before recursive searches
+- [x] **Use quotes** around search patterns
+- [x] **Use -i for case-insensitive** when appropriate
+- [x] **Count with grep -c** instead of piping to wc
+- [x] **Test find before -delete** to avoid accidents
+- [x] **Use grep -l** to find files with matches
+- [x] **Combine grep and find** for powerful searches
+- [x] **Use -w for whole words** to avoid partial matches
+- [x] **Check file locations** before recursive searches
 
 ## Quick Reference
 
