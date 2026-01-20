@@ -92,7 +92,7 @@ done
 
 ## Part 1: Basic gzip Operations
 
-### Exercise 1.1: Compressing Files
+<details><summary>Exercise 1.1: Compressing Files</summary>
 
 **Tasks:**
 1. Compress data1.txt
@@ -117,8 +117,8 @@ gzip sample*.txt
 **Questions:**
 - What happens to the original file?
 - How much space was saved?
-
-### Exercise 1.2: Compression Levels
+</details>
+<details><summary>Exercise 1.2: Compression Levels</summary>
 
 **Tasks:**
 1. Create three copies of large_file.txt
@@ -143,8 +143,8 @@ ls -lh test*.gz
 - Which is fastest?
 - Which gives best compression?
 - When would you use each level?
-
-### Exercise 1.3: Decompressing Files
+</details>
+<details><summary>Exercise 1.3: Decompressing Files</summary>
 
 **Tasks:**
 1. Decompress data1.txt.gz
@@ -162,8 +162,8 @@ gunzip -k data1.txt.gz  # Decompress, keep .gz
 # Decompress all
 gunzip *.gz
 ```
-
-### Exercise 1.4: Testing Integrity
+</details>
+<details><summary>Exercise 1.4: Testing Integrity</summary>
 
 **Tasks:**
 1. Compress sequences.fasta
@@ -178,10 +178,11 @@ echo $?    # 0 = success, non-zero = failure
 ```
 
 **Practice:** Verify all your compressed files.
+</details>
 
 ## Part 2: Working with Compressed Files
 
-### Exercise 2.1: Viewing Compressed Files
+<details><summary>Exercise 2.1: Viewing Compressed Files</summary>
 
 **Tasks:**
 1. Compress reads.fastq
@@ -200,8 +201,8 @@ zless reads.fastq.gz
 ```
 
 **Question:** Why use zcat instead of gunzip then cat?
-
-### Exercise 2.2: Searching in Compressed Files
+</details>
+<details><summary>Exercise 2.2: Searching in Compressed Files</summary>
 
 **Tasks:**
 1. Search for specific read ID in compressed FASTQ
@@ -216,8 +217,8 @@ zcat reads.fastq.gz | wc -l    # Divide by 4 for read count
 zgrep -c "pattern" *.gz
 zgrep -A 3 "@read1" reads.fastq.gz
 ```
-
-### Exercise 2.3: Processing Compressed Data
+</details>
+<details><summary>Exercise 2.3: Processing Compressed Data</summary>
 
 **Tasks:**
 1. Count sequences in compressed FASTA
@@ -235,8 +236,8 @@ zgrep ">" sequences.fasta.gz | cut -d' ' -f1
 zcat sequences.fasta.gz | grep -v ">" | wc -c
 zcat sequences.fasta.gz | grep -v ">" | tr -d '\n' | wc -c
 ```
-
-### Exercise 2.4: Comparing Compressed Files
+</details>
+<details><summary>Exercise 2.4: Comparing Compressed Files</summary>
 
 **Tasks:**
 1. Create two similar files and compress
@@ -251,10 +252,11 @@ gzip file1.txt file2.txt
 
 zdiff file1.txt.gz file2.txt.gz
 ```
+</details>
 
 ## Part 3: tar Archives
 
-### Exercise 3.1: Creating Archives
+<details><summary>Exercise 3.1: Creating Archives</summary>
 
 **Tasks:**
 1. Create a tar archive of project1/
@@ -275,8 +277,8 @@ tar -czf projects.tar.gz project1/ project2/
 - `z` = gzip compression
 - `f` = file (must be last before filename)
 - `v` = verbose
-
-### Exercise 3.2: Listing Archive Contents
+</details>
+<details><summary>Exercise 3.2: Listing Archive Contents</summary>
 
 **Tasks:**
 1. List contents without extracting
@@ -289,8 +291,8 @@ tar -tzf project1.tar.gz
 tar -tzvf project1.tar.gz
 tar -tzf project1.tar.gz | grep "scripts"
 ```
-
-### Exercise 3.3: Extracting Archives
+</details>
+<details><summary>Exercise 3.3: Extracting Archives</summary>
 
 **Tasks:**
 1. Extract entire archive
@@ -305,8 +307,8 @@ tar -xzf project1.tar.gz -C /tmp/
 tar -xzf project1.tar.gz project1/scripts/analyze.sh
 tar -xzvf project1.tar.gz
 ```
-
-### Exercise 3.4: Updating Archives
+</details>
+<details><summary>Exercise 3.4: Updating Archives</summary>
 
 **Tasks:**
 1. Add files to existing archive
@@ -320,8 +322,8 @@ tar -cf archive.tar project1/
 tar -rf archive.tar project2/    # Append
 tar -tf archive.tar              # Verify
 ```
-
-### Exercise 3.5: Archive Best Practices
+</details>
+<details><summary>Exercise 3.5: Archive Best Practices</summary>
 
 **Tasks:**
 1. Create dated archive
@@ -334,10 +336,11 @@ tar -czf backup_$(date +%Y%m%d).tar.gz project1/
 tar -czf project.tar.gz --exclude="*.log" project1/
 tar -czpf project.tar.gz project1/    # p = preserve permissions
 ```
+</details>
 
 ## Part 4: Real-World Scenarios
 
-### Exercise 4.1: Archiving Analysis Results
+<details><summary>Exercise 4.1: Archiving Analysis Results</summary>
 
 **Scenario:** Archive completed analysis for long-term storage.
 
@@ -361,8 +364,8 @@ tar -tzf analysis_results_*.tar.gz | head
 # Check size
 ls -lh analysis_results_*.tar.gz
 ```
-
-### Exercise 4.2: Compressing Sequencing Data
+</details>
+<details><summary>Exercise 4.2: Compressing Sequencing Data</summary>
 
 **Scenario:** Compress large FASTQ files for storage.
 
@@ -388,8 +391,8 @@ done
 # Report compression
 ls -lh *.fastq.gz > compression_report.txt
 ```
-
-### Exercise 4.3: Batch Decompression
+</details>
+<details><summary>Exercise 4.3: Batch Decompression</summary>
 
 **Scenario:** Process multiple compressed files.
 
@@ -412,8 +415,8 @@ done
 # Recompress
 gzip *.txt
 ```
-
-### Exercise 4.4: Transferring Data
+</details>
+<details><summary>Exercise 4.4: Transferring Data</summary>
 
 **Scenario:** Prepare data for transfer to collaborator.
 
@@ -442,8 +445,8 @@ $(tar -tzf data_transfer.tar.gz | head -20)
 ...
 EOF
 ```
-
-### Exercise 4.5: Incremental Backups
+</details>
+<details><summary>Exercise 4.5: Incremental Backups</summary>
 
 **Scenario:** Create dated backups of project directory.
 
@@ -472,10 +475,11 @@ fi
 
 echo "Backup created: $(ls -lh $BACKUP_DIR/*$DATE.tar.gz)"
 ```
+</details>
 
 ## Part 5: Advanced Operations
 
-### Exercise 5.1: Working with Streaming Data
+<details><summary>Exercise 5.1: Working with Streaming Data</summary>
 
 **Tasks:**
 1. Compress data on-the-fly
@@ -493,8 +497,9 @@ zcat input.fastq.gz | quality_filter | gzip > filtered.fastq.gz
 # Decompress, process, compress
 zcat reads.fastq.gz | head -40 | gzip > sample_reads.fastq.gz
 ```
+</details>
 
-### Exercise 5.2: Compression Comparison
+<details><summary>Exercise 5.2: Compression Comparison</summary>
 
 **Task:** Compare different compression methods.
 
@@ -523,8 +528,9 @@ ls -lh test*.{gz,bz2,xz}
 - Speed differences?
 - Size differences?
 - When to use each?
+</details>
 
-### Exercise 5.3: Multi-threaded Compression
+<details><summary>Exercise 5.3: Multi-threaded Compression</summary>
 
 **Task:** Use pigz for faster compression (if available).
 
@@ -540,8 +546,8 @@ time pigz -k large_file.txt
 # Check if same format
 file large_file.txt.gz
 ```
-
-### Exercise 5.4: Selective Extraction
+</details>
+<details><summary>Exercise 5.4: Selective Extraction</summary>
 
 **Task:** Extract only specific files from large archive.
 
@@ -556,8 +562,8 @@ tar -xzf projects.tar.gz --wildcards "*/scripts/*"
 # Extract specific file
 tar -xzf projects.tar.gz project1/data/sample.txt
 ```
-
-### Exercise 5.5: Archive Verification
+</details>
+<details><summary>Exercise 5.5: Archive Verification</summary>
 
 **Task:** Comprehensive archive verification.
 
@@ -575,10 +581,10 @@ tar -df archive.tar.gz
 # List differences
 tar -dzf archive.tar.gz
 ```
-
+</details>
 ## Part 6: Space Management
 
-### Exercise 6.1: Finding Compression Candidates
+<details><summary>Exercise 6.1: Finding Compression Candidates</summary>
 
 **Tasks:**
 1. Find large uncompressed files
@@ -596,8 +602,8 @@ find . -type f -size +1M ! -name "*.gz" -exec ls -l {} \; | awk '{sum+=$5} END {
 # List by size
 find . -type f ! -name "*.gz" -exec ls -lh {} \; | sort -k5 -h
 ```
-
-### Exercise 6.2: Automated Compression Script
+</details>
+<details><summary>Exercise 6.2: Automated Compression Script</summary>
 
 **Task:** Create script to compress old files automatically.
 
@@ -618,8 +624,8 @@ done
 
 echo "Compression complete" >> $LOG
 ```
-
-### Exercise 6.3: Cleanup Old Archives
+</details>
+<details><summary>Exercise 6.3: Cleanup Old Archives</summary>
 
 **Tasks:**
 1. Find archives older than 90 days
@@ -640,10 +646,11 @@ find . -name "*.tar.gz" -mtime +90 -print0 | tar -czf old_archives_$(date +%Y%m%
 # Then remove
 find . -name "*.tar.gz" -mtime +90 -delete
 ```
+</details>
 
 ## Challenge Exercises
 
-### Challenge 7.1: Complete Backup System
+<details><summary>Challenge 7.1: Complete Backup System</summary>
 
 **Task:** Create comprehensive backup script.
 
@@ -656,8 +663,8 @@ find . -name "*.tar.gz" -mtime +90 -delete
 6. Log all operations
 
 **Build the script!**
-
-### Challenge 7.2: Data Pipeline
+</details>
+<details><summary>Challenge 7.2: Data Pipeline</summary>
 
 **Task:** Create pipeline that handles compressed data throughout.
 
@@ -678,8 +685,8 @@ zcat input.fastq.gz | \
          NR%4==0 {qual=$0}' | \
     gzip > filtered.fastq.gz
 ```
-
-### Challenge 7.3: Archive Management System
+</details>
+<details><summary>Challenge 7.3: Archive Management System</summary>
 
 **Task:** Create archive inventory and management system.
 
@@ -689,6 +696,7 @@ zcat input.fastq.gz | \
 3. Verify integrity regularly
 4. Generate reports
 5. Identify duplicates
+</details>
 
 ## Reflection Questions
 
@@ -701,16 +709,16 @@ zcat input.fastq.gz | \
 
 ## Best Practices Learned
 
-✓ **Always compress FASTQ/FASTA** files
-✓ **Use -k flag** to keep originals when testing
-✓ **Test integrity** after compression
-✓ **Use appropriate compression level** (speed vs size)
-✓ **Archive related files together** with tar
-✓ **Add timestamps** to backup archives
-✓ **Verify archives** before deleting originals
-✓ **Work with compressed data** directly when possible
-✓ **Document archive contents** in manifest files
-✓ **Automate compression** for old files
+- [x] **Always compress FASTQ/FASTA** files
+- [x] **Use -k flag** to keep originals when testing
+- [x] **Test integrity** after compression
+- [x] **Use appropriate compression level** (speed vs size)
+- [x] **Archive related files together** with tar
+- [x] **Add timestamps** to backup archives
+- [x] **Verify archives** before deleting originals
+- [x] **Work with compressed data** directly when possible
+- [x] **Document archive contents** in manifest files
+- [x] **Automate compression** for old files
 
 ## Quick Reference
 
@@ -746,7 +754,7 @@ Congratulations on completing intermediate exercises! Ready for advanced workflo
 
 **Estimated time:** 60-90 minutes
 
-**Key skills practiced:**
+## **Key skills practiced:**
 - Compressing and decompressing files
 - Working with compressed data directly
 - Creating and managing archives
