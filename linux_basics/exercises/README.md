@@ -69,17 +69,11 @@ cp -r ../sample-data/* data/raw/
 - [Compression Exercises](intermediate/03-compression-exercises.md)
 - [FASTA/FASTQ Exercises](intermediate/04-sequence-files-exercises.md)
 
-### Advanced Level
-- [Complete Workflow Exercises](advanced/01-workflows-exercises.md)
-- [Automation Exercises](advanced/02-automation-exercises.md)
-- [Real Data Analysis](advanced/03-real-data-exercises.md)
-
 ## Solutions
 
 Solutions are provided in the `solutions/` directory:
 - [Beginner Solutions](solutions/beginner-solutions.md)
 - [Intermediate Solutions](solutions/intermediate-solutions.md)
-- [Advanced Solutions](solutions/advanced-solutions.md)
 
 ## Tips for Success
 
@@ -105,11 +99,6 @@ Mark your progress:
 - [ ] Text Processing (02)
 - [ ] Compression (03)
 - [ ] Sequence Files (04)
-
-**Advanced:**
-- [ ] Workflows (01)
-- [ ] Automation (02)
-- [ ] Real Data (03)
 
 ## Additional Practice
 
