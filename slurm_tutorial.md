@@ -5,18 +5,18 @@
 
 ## Table of Contents
 
-1. [Prerequisites: Before You Begin](#1-Prerequisites-Before-You-Begin)
-2. [What Is This Cluster and How Does It Work?](#1-what-is-this-cluster-and-how-does-it-work)
-3. [⚠️ The Golden Rule: Never Run Jobs on the Login Node](#2-️-the-golden-rule-never-run-jobs-on-the-login-node)
-4. [Checking Cluster Status with `sinfo`](#3-checking-cluster-status-with-sinfo)
-5. [Interactive Jobs — Working Live on a Compute Node](#4-interactive-jobs--working-live-on-a-compute-node)
-6. [Batch Jobs — Submitting Work to Run in the Background](#5-batch-jobs--submitting-work-to-run-in-the-background)
-7. [Managing Your Jobs: `squeue` and `scancel`](#6-managing-your-jobs-squeue-and-scancel)
-8. [Inspecting Jobs in Detail with `scontrol`](#7-inspecting-jobs-in-detail-with-scontrol)
-9. [Viewing Your Job History and Resource Usage with `sacct`](#8-viewing-your-job-history-and-resource-usage-with-sacct)
-10. [Understanding Accounts and Allocations with `sacctmgr`](#9-understanding-accounts-and-allocations-with-sacctmgr)
-11. [Quick Reference Cheat Sheet](#10-quick-reference-cheat-sheet)
-12. [Common Problems and Solutions](#11-common-problems-and-solutions)
+1. [Prerequisites: Before You Begin](#1-prerequisites-before-you-begin)
+2. [What Is This Cluster and How Does It Work?](#2-what-is-this-cluster-and-how-does-it-work)
+3. [⚠️ The Golden Rule: Never Run Jobs on the Login Node](#3-️-the-golden-rule-never-run-jobs-on-the-login-node)
+4. [Checking Cluster Status with `sinfo`](#4-checking-cluster-status-with-sinfo)
+5. [Interactive Jobs — Working Live on a Compute Node](#5-interactive-jobs--working-live-on-a-compute-node)
+6. [Batch Jobs — Submitting Work to Run in the Background](#6-batch-jobs--submitting-work-to-run-in-the-background)
+7. [Managing Your Jobs: `squeue` and `scancel`](#7-managing-your-jobs-squeue-and-scancel)
+8. [Inspecting Jobs in Detail with `scontrol`](#8-inspecting-jobs-in-detail-with-scontrol)
+9. [Viewing Your Job History and Resource Usage with `sacct`](#9-viewing-your-job-history-and-resource-usage-with-sacct)
+10. [Understanding Accounts and Allocations with `sacctmgr`](#10-understanding-accounts-and-allocations-with-sacctmgr)
+11. [Quick Reference Cheat Sheet](#11-quick-reference-cheat-sheet)
+12. [Common Problems and Solutions](#12-common-problems-and-solutions)
 
 ---
 ## 1. Prerequisites: Before You Begin
