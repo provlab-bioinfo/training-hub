@@ -30,10 +30,10 @@ Before you can use the cluster, there are a few things that need to be set up. N
 
 ## 2. What Is This Cluster and How Does It Work?
 
-A high-performance computing (HPC) cluster is a collection of many computers (called **nodes**) connected together so you can run analyses that are too large or slow for your laptop.
+A high-performance computing (HPC) cluster is a collection of many computers (called **nodes**) connected together so you can run analyses that are too large or slow for your local computer.
 
 ```
-Your Laptop  →  Login Node (the "front door")  →  Compute Nodes (the "workers")
+Your local desktop or laptop  →  Login Node (the "front door")  →  Compute Nodes (the "workers")
 ```
 
 When you connect via SSH, you land on the **login node** — think of it as the reception desk of the cluster. From there, you use a system called **Slurm** to send your analysis jobs to the **compute nodes**, where the real processing happens.
