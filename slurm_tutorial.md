@@ -1,5 +1,7 @@
 # HPC Cluster Job Submission Guide
 ### A Practical Introduction for Public Health Researchers
+> **📝 Note:**  
+> This practical job submission guide was generated with assistance from **AI tools**. All instructions and code examples were **reviewed and verified** by the authors.
 
 ---
 
