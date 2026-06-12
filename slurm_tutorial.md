@@ -5,7 +5,7 @@
 
 ## Table of Contents
 
-1.  Prerequisites: Before You Begin
+1. [Prerequisites: Before You Begin](#1-Prerequisites-Before-You-Begin)
 2. [What Is This Cluster and How Does It Work?](#1-what-is-this-cluster-and-how-does-it-work)
 3. [⚠️ The Golden Rule: Never Run Jobs on the Login Node](#2-️-the-golden-rule-never-run-jobs-on-the-login-node)
 4. [Checking Cluster Status with `sinfo`](#3-checking-cluster-status-with-sinfo)
