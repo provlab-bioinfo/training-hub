@@ -1,5 +1,6 @@
 # HPC Cluster Job Submission Guide
-### A Practical Introduction for Public Health Researchers
+A practial job submission guide for biologists and public health researchers to conduct bioinformatics data analysis on HPC clusers.
+
 > **📝 Note:**  
 > This practical job submission guide was generated with assistance from **AI tools**. All instructions and code examples were **reviewed and verified** by the authors.
 
