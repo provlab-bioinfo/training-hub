@@ -135,7 +135,7 @@ Breaking this down:
 Once the session starts, your prompt will change to show you are on a compute node, for example:
 
 ```
- [xiaolidong@uxaplgnmxapp02 ~]$
+ [your_username@your_cluster_node ~]$
 ```
 
 You can now run your analyses freely. When you are done, type `exit` to return to the login node.
