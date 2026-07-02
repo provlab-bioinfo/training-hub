@@ -2,7 +2,74 @@
 Complete solutions for beginner exercises. Try solving on your own first!
 
 ## Exercise 1: Navigation Solutions
+<details><summary> Setup</summary>
 
+Create practice directories and file:
+```
+# Create base directory
+BASE="practice_nav"
+
+echo "Creating directory structure under $BASE ..."
+
+mkdir -p "$BASE"/project1/data
+mkdir -p "$BASE"/project1/scripts
+mkdir -p "$BASE"/project1/results
+mkdir -p "$BASE"/project2/raw_data
+mkdir -p "$BASE"/project2/analysis
+mkdir -p "$BASE"/project2/results
+
+# --- project1/data ---
+cat > "$BASE/project1/data/samples.csv" << 'EOF'
+id,value,group
+1,23.5,A
+2,17.2,B
+3,45.1,A
+4,9.8,C
+EOF
+
+cat > "$BASE/project1/data/readme.txt" << 'EOF'
+Raw sample data for project1.
+EOF
+
+# --- project1/scripts ---
+cat > "$BASE/project1/scripts/script_name.sh" << 'EOF'
+#!/usr/bin/env bash
+echo "This is a placeholder analysis script for project1."
+EOF
+chmod +x "$BASE/project1/scripts/script_name.sh"
+
+cat > "$BASE/project1/scripts/cleanup.sh" << 'EOF'
+#!/usr/bin/env bash
+echo "Pretend cleanup script."
+EOF
+chmod +x "$BASE/project1/scripts/cleanup.sh"
+
+# --- project1/results (start empty, exercises create a figures/ subfolder here) ---
+touch "$BASE/project1/results/.gitkeep"
+
+# --- project2/raw_data ---
+cat > "$BASE/project2/raw_data/measurements.csv" << 'EOF'
+timestamp,sensor,reading
+2026-01-01T00:00,temp,21.4
+2026-01-01T01:00,temp,21.1
+2026-01-01T02:00,temp,20.9
+EOF
+
+# --- project2/analysis ---
+cat > "$BASE/project2/analysis/notes.md" << 'EOF'
+# Analysis Notes
+Initial observations go here.
+EOF
+
+# --- project2/results ---
+touch "$BASE/project2/results/.gitkeep"
+
+# A hidden file, useful for Exercise 1.9 (case-sensitivity / typo practice)
+touch "$BASE/.hidden_config"
+
+```
+
+</details>
 <details>
 <summary>Exercise 1.1: Finding Your Way</summary>
    
