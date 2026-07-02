@@ -5,7 +5,12 @@ Complete solutions for beginner exercises. Try solving on your own first!
 <details><summary> Setup</summary>
 
 Create practice directories and file:
+
+
 ```
+# befor making the practice directories and files, please cd to the target directory where you want to dot he practice first.
+# when you copy and paste the command, please ignore the line started with "#"
+
 # Create base directory
 BASE="practice_nav"
 
@@ -68,7 +73,6 @@ touch "$BASE/project2/results/.gitkeep"
 touch "$BASE/.hidden_config"
 
 ```
-
 </details>
 <details>
 <summary>Exercise 1.1: Finding Your Way</summary>
