@@ -189,11 +189,11 @@ cd Project1/Data
 cd project1/data
 
 # Mistake 3: Space in path
-cd project 1
+cd project1
 # Fix: Use quotes or escape
-cd "project 1"
+cd "project1"
 # Or
-cd project\ 1
+cd project1
 
 # Mistake 4: Missing parent directory
 cd practice_nav/project1
